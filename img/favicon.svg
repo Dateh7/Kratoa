@@ -1,0 +1,35 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- KRATOA Green -->
+  <style>
+    .dot { fill: #9fbf73; }
+  </style>
+
+  <!-- 12 dots spaced at 30° each -->
+  <!-- Circle radius = 80 | Dot radius = 10 -->
+
+  <!-- Dot 1 (0°) -->
+  <circle class="dot" cx="128" cy="48" r="10"></circle>
+  <!-- Dot 2 (30°) -->
+  <circle class="dot" cx="168.56" cy="58.64" r="10"></circle>
+  <!-- Dot 3 (60°) -->
+  <circle class="dot" cx="197.32" cy="87.41" r="10"></circle>
+  <!-- Dot 4 (90°) -->
+  <circle class="dot" cx="208" cy="128" r="10"></circle>
+  <!-- Dot 5 (120°) -->
+  <circle class="dot" cx="197.32" cy="168.56" r="10"></circle>
+  <!-- Dot 6 (150°) -->
+  <circle class="dot" cx="168.56" cy="197.32" r="10"></circle>
+  <!-- Dot 7 (180°) -->
+  <circle class="dot" cx="128" cy="208" r="10"></circle>
+  <!-- Dot 8 (210°) -->
+  <circle class="dot" cx="87.41" cy="197.32" r="10"></circle>
+  <!-- Dot 9 (240°) -->
+  <circle class="dot" cx="58.64" cy="168.56" r="10"></circle>
+  <!-- Dot 10 (270°) -->
+  <circle class="dot" cx="48" cy="128" r="10"></circle>
+  <!-- Dot 11 (300°) -->
+  <circle class="dot" cx="58.64" cy="87.41" r="10"></circle>
+  <!-- Dot 12 (330°) -->
+  <circle class="dot" cx="87.41" cy="58.64" r="10"></circle>
+
+</svg>

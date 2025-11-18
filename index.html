@@ -7,7 +7,6 @@
   <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
   <link rel="alternate icon" href="img/favicon.svg" type="image/svg+xml">
 
-
   <!-- SEO Meta Tags -->
   <meta name="description" content="KRATOA Consulting is a women-led advisory and investment firm specialising in infrastructure, finance, technology, and sustainable development." />
   <meta name="keywords" content="KRATOA Consulting, advisory, consulting, investment, infrastructure, finance, women-led, South Africa, strategy, development" />
@@ -53,47 +52,22 @@
 
   <!-- Custom Styles -->
   <style>
-    /* Scroll-trigger base states */
     .fade-in,
     .slide-up,
     .zoom-in {
       opacity: 0;
     }
+    .slide-up { transform: translateY(40px); }
+    .zoom-in { transform: scale(0.96); }
 
-    .slide-up {
-      transform: translateY(40px);
-    }
+    .visible.fade-in { animation: fadeIn 1.2s ease-out forwards; }
+    .visible.slide-up { animation: slideUp 1.2s ease-out forwards; }
+    .visible.zoom-in { animation: zoomIn 1.4s ease-out forwards; }
 
-    .zoom-in {
-      transform: scale(0.96);
-    }
+    @keyframes fadeIn { to { opacity: 1; } }
+    @keyframes slideUp { to { opacity: 1; transform: translateY(0); } }
+    @keyframes zoomIn { to { opacity: 1; transform: scale(1); } }
 
-    /* When in view */
-    .visible.fade-in {
-      animation: fadeIn 1.2s ease-out forwards;
-    }
-
-    .visible.slide-up {
-      animation: slideUp 1.2s ease-out forwards;
-    }
-
-    .visible.zoom-in {
-      animation: zoomIn 1.4s ease-out forwards;
-    }
-
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
-
-    @keyframes slideUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes zoomIn {
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    /* Animated separators */
     .separator {
       height: 1px;
       width: 100%;
@@ -101,7 +75,6 @@
       overflow: hidden;
       background: linear-gradient(90deg, rgba(159,191,115,0.18), rgba(0,0,0,0));
     }
-
     .separator::before {
       content: "";
       position: absolute;
@@ -110,7 +83,6 @@
       animation: moveLine 2.4s linear infinite;
       opacity: 0.9;
     }
-
     @keyframes moveLine {
       0% { transform: translateX(-50%); }
       100% { transform: translateX(50%); }
@@ -127,12 +99,10 @@
       z-index: 9999;
       transition: opacity 0.6s ease, visibility 0.6s ease;
     }
-
     #preloader.preloader-hide {
       opacity: 0;
       visibility: hidden;
     }
-
     .orbit-shell {
       width: 100px;
       height: 100px;
@@ -145,7 +115,6 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.12);
       background: rgba(253,250,245,0.95);
     }
-
     .orbit-center {
       width: 24px;
       height: 24px;
@@ -153,7 +122,6 @@
       border: 1px solid rgba(159,191,115,0.4);
       background: radial-gradient(circle, rgba(159,191,115,0.15) 0%, transparent 60%);
     }
-
     .orbit-logo {
       position: absolute;
       width: 40px;
@@ -161,20 +129,16 @@
       animation: orbitLogo 2.2s linear infinite;
       transform-origin: center center;
     }
-
     @keyframes orbitLogo {
-      0% {
-        transform: rotate(0deg) translateX(40px) rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg) translateX(40px) rotate(-360deg);
-      }
+      0% { transform: rotate(0deg) translateX(40px) rotate(0deg); }
+      100% { transform: rotate(360deg) translateX(40px) rotate(-360deg); }
     }
 
-    /* Cookie banner */
-    #cookieBanner {
-      font-size: 0.8rem;
-    }
+    #cookieBanner { font-size: 0.8rem; }
+
+    /* Hide native scrollbar for sector carousel */
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+    .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
   </style>
 </head>
 
@@ -193,38 +157,37 @@
   <div class="max-w-7xl mx-auto px-6 lg:px-10 py-4 flex items-center justify-between">
 
     <!-- Logo + name -->
-    <div class="flex items-center gap-3">
-      <!-- Bigger logo -->
+    <div class="flex items-center gap-4">
+      <!-- Logo circle -->
       <img src="img/Kratoa-green-circle.png"
            alt="KRATOA Logo"
-           class="w-14 h-14">
+           class="w-16 h-16 md:w-20 md:h-20">
 
       <!-- Text block -->
       <div class="flex flex-col leading-tight">
-        <!-- KRATOA (Bigger & Above) -->
-        <span class="text-sm sm:text-base tracking-[0.30em] uppercase font-semibold">
+
+        <!-- KRATOA -->
+        <span class="text-base md:text-lg tracking-[0.32em] uppercase font-semibold">
       KRATOA
     </span>
 
-        <!-- CONSULTING (Smaller) -->
-        <span class="text-[0.65rem] tracking-[0.30em] uppercase opacity-90">
-      CONSULTING
-    </span>
-
-        <!-- Unlimited Potential (Bold) -->
-        <span class="text-[0.65rem] tracking-[0.25em] uppercase font-bold text-brand mt-1">
-      Unlimited Potential
+        <!-- Consulting -->
+        <span class="text-[0.75rem] tracking-[0.28em] uppercase text-neutral-700 dark:text-neutral-300">
+      Consulting
     </span>
       </div>
     </div>
 
     <!-- Desktop nav -->
-    <nav class="hidden md:flex items-center gap-10 text-xs tracking-[0.25em] uppercase">
-      <a href="#about" class="hover:text-brand transition">About</a>
-      <a href="#services" class="py-2 hover:text-brand transition">Services</a>
+    <nav class="hidden md:flex items-center gap-10 text-xs tracking-[0.25em] uppercase font-semibold">
+      <a href="about.html" class="hover:text-brand transition">About</a>
+      <a href="#services" class="hover:text-brand transition">Services</a>
+      <a href="#sectors" class="hover:text-brand transition">Sectors</a>
       <a href="#team" class="hover:text-brand transition">Team</a>
+      <a href="insights.html" class="hover:text-brand transition">Insights</a>
       <a href="#contact" class="hover:text-brand transition">Contact</a>
     </nav>
+
 
     <!-- Controls -->
     <div class="flex items-center gap-4">
@@ -244,64 +207,69 @@
   </div>
 
   <!-- Mobile menu -->
-  <div id="mobileMenu" class="hidden md:hidden flex-col bg-lightBg/95 dark:bg-black/95 border-t border-black/5 dark:border-white/10 text-center py-4 text-sm tracking-[0.25em] uppercase">
-    <a href="#about" class="py-2 hover:text-brand transition">About</a>
+  <div id="mobileMenu" class="hidden md:hidden flex-col bg-lightBg/95 dark:bg-black/95 border-t border-black/5 dark:border-white/10 text-center py-4 text-sm tracking-[0.25em] uppercase font-semibold">
+    <a href="about.html" class="py-2 hover:text-brand transition">About</a>
     <a href="#services" class="py-2 hover:text-brand transition">Services</a>
+    <a href="#sectors" class="py-2 hover:text-brand transition">Sectors</a>
     <a href="#team" class="py-2 hover:text-brand transition">Team</a>
+    <a href="insights.html" class="py-2 hover:text-brand transition">Insights</a>
     <a href="#contact" class="py-2 hover:text-brand transition">Contact</a>
   </div>
-</header>
 
+
+</header>
 
 <!-- ================= HERO ================= -->
 <section
   class="relative min-h-screen flex items-center px-6 lg:px-10 pt-28 pb-16 overflow-hidden"
   style="background-image: url('img/hero.jpg'); background-size: cover; background-position: center;">
 
-  <!-- Overlay (Light & Dark Mode) -->
-  <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/10 dark:from-black/70 dark:via-black/50 dark:to-black/30"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/20"></div>
 
   <div class="relative max-w-7xl mx-auto w-full">
 
-    <!-- Text content -->
     <div class="fade-in max-w-2xl">
-      <p class="text-xs tracking-[0.25em] uppercase text-brand mb-4">
+
+      <!-- TOP GREY/WHITE INTRO TEXT – BOLDER + WHITE -->
+      <p class="text-sm sm:text-base tracking-[0.28em] uppercase text-white/90 mb-4 font-semibold">
         Women-led • Impact-driven • Strategy-focused
       </p>
 
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white slide-up">
-        Unlocking <span class="text-brand">Unlimited Potential</span> across
-        infrastructure, finance &amp; technology.
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-white slide-up leading-tight">
+        Unlocking <span class="text-brand">Unlimited Potential</span><br>
+        across infrastructure, finance & technology.
       </h1>
 
-      <p class="mt-6 text-sm sm:text-base text-neutral-200 dark:text-neutral-300 max-w-xl slide-up">
-        KRATOA Consulting is a women-owned advisory and investment firm, partnering
-        with clients and investors to build sustainable, inclusive and commercially
-        sound growth.
+      <p class="mt-6 text-base sm:text-lg text-neutral-200 max-w-xl slide-up">
+        A women-owned advisory and investment firm building sustainable,
+        inclusive and commercially sound growth across Africa.
       </p>
 
       <div class="separator mt-10 max-w-md opacity-80"></div>
 
-      <div class="mt-10 grid grid-cols-3 max-w-md text-xs sm:text-sm gap-6 text-white slide-up">
-        <div>
-          <p class="text-lg sm:text-xl font-semibold">40+ yrs</p>
-          <p class="text-neutral-300">Combined Experience</p>
-        </div>
-        <div>
-          <p class="text-lg sm:text-xl font-semibold">Multi-sector</p>
-          <p class="text-neutral-300">Infrastructure &amp; Tech</p>
-        </div>
-        <div>
-          <p class="text-lg sm:text-xl font-semibold">Africa-focused</p>
-          <p class="text-neutral-300">Inclusive Investment</p>
-        </div>
-      </div>
-    </div>
 
+      <div class="mt-10 grid grid-cols-3 max-w-md text-white slide-up gap-6">
+
+        <div>
+          <p class="text-2xl sm:text-3xl font-bold">40+ yrs</p>
+          <p class="text-neutral-300 text-sm">Experience</p>
+        </div>
+
+        <div>
+          <p class="text-2xl sm:text-3xl font-bold">Multi-sector</p>
+          <p class="text-neutral-300 text-sm">Infra & Tech</p>
+        </div>
+
+        <div>
+          <p class="text-2xl sm:text-3xl font-bold">Africa-focused</p>
+          <p class="text-neutral-300 text-sm">Investment</p>
+        </div>
+
+      </div>
+
+    </div>
   </div>
 </section>
-
-
 
 
 <!-- ================= ABOUT ================= -->
@@ -313,26 +281,33 @@
   <div class="max-w-6xl mx-auto">
     <div class="flex flex-col lg:flex-row gap-16 items-start">
 
-      <!-- Left: narrative -->
+      <!-- Left: Summary narrative -->
       <div class="flex-1 fade-in">
-        <h2 class="text-2xl sm:text-3xl font-semibold text-brand mb-6">About KRATOA Consulting</h2>
-        <p class="text-sm sm:text-base text-neutral-700 dark:text-neutral-200 leading-relaxed">
-          KRATOA Consulting is a women-owned and led advisory, investment and
-          strategy firm focused on infrastructure, transport &amp; logistics,
-          energy, technology, and related sectors.
-          <br><br>
-          Our work is rooted in economic inclusion, sustainability, and the
-          creation of commercially viable, impactful solutions. We co-create
-          strategies and structures that enable capital protection, growth
-          and long-term value for our clients and partners.
+        <h2 class="text-2xl sm:text-3xl font-semibold text-brand mb-6">
+          About KRATOA Consulting
+        </h2>
+
+        <p class="text-sm sm:text-base text-neutral-700 dark:text-neutral-200 leading-relaxed mb-6">
+          KRATOA Consulting is a women-owned advisory and investment firm focused on
+          infrastructure, transport & logistics, energy, technology and social development.
+          We support clients with research-led strategy, capital solutions and delivery planning
+          that promote economic inclusion, sustainability and long-term value.
         </p>
+
+        <!-- Button -->
+        <a href="about.html"
+           class="inline-block px-5 py-3 bg-brand/10 text-brand border border-brand/40 rounded-lg
+                  text-[0.7rem] sm:text-xs tracking-[0.28em] uppercase font-semibold
+                  hover:bg-brand hover:text-black hover:border-brand transition">
+          Learn More →
+        </a>
+
         <div class="separator mt-10"></div>
       </div>
 
       <!-- Right: staggered cards -->
       <div class="flex-1 relative">
 
-        <!-- Accent block -->
         <div class="hidden lg:block absolute -right-6 top-6 w-48 h-48 rounded-3xl bg-brand/15 dark:bg-brand/10"></div>
 
         <div class="grid gap-10">
@@ -342,9 +317,9 @@
                       shadow-[0_4px_12px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_12px_rgba(0,0,0,0.5)] zoom-in">
             <h3 class="font-semibold text-sm mb-2 text-brand">Our Values</h3>
             <ul class="text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 space-y-1">
-              <li>• Strategic partnerships with key industry players.</li>
-              <li>• Client-centric, research-based solutions.</li>
-              <li>• Inclusive, sustainable economic development.</li>
+              <li>• Partnerships grounded in trust and impact.</li>
+              <li>• Client-centred, evidence-based solutions.</li>
+              <li>• Inclusive and sustainable development.</li>
               <li>• Authentic, accountable leadership.</li>
             </ul>
           </div>
@@ -355,9 +330,8 @@
                       transform lg:translate-x-10 zoom-in">
             <h3 class="font-semibold text-sm mb-2 text-brand">Our Approach</h3>
             <p class="text-xs sm:text-sm text-neutral-700 dark:text-neutral-300">
-              We prioritise, apply knowledge and monetise opportunity:
-              using proven tools, data and lessons from success stories to
-              design staged, high-impact execution plans.
+              We combine data, policy insight and proven tools to design actionable,
+              high-impact strategies that unlock opportunity and drive measurable results.
             </p>
           </div>
 
@@ -368,57 +342,44 @@
   </div>
 </section>
 
+
 <!-- ================= WOMEN IN LEADERSHIP ================= -->
 <section class="py-16 lg:py-24 px-6 lg:px-10 bg-lightBg dark:bg-dark relative">
-
-  <!-- Accent line -->
   <div class="hidden lg:block absolute left-0 top-0 h-full w-[3px] bg-brand/25"></div>
 
   <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-
     <!-- Text -->
     <div class="fade-in">
       <h2 class="text-2xl sm:text-3xl font-semibold text-brand mb-5">
         Women in Leadership
       </h2>
-
       <p class="text-sm sm:text-base text-neutral-700 dark:text-neutral-200 leading-relaxed mb-4">
-        KRATOA Consulting is proudly women-owned and women-led. Our leadership
-        philosophy is rooted in authenticity, collaboration and strategic clarity.
-        We believe that empowering women in high-impact sectors is essential to
-        shaping inclusive, sustainable economic growth across Africa.
+        KRATOA is intentionally women-owned and women-led. Our leadership brings together
+        deep technical expertise in finance, infrastructure and governance with lived insight
+        into how systems impact women, communities and everyday mobility.
       </p>
-
       <p class="text-sm sm:text-base text-neutral-700 dark:text-neutral-200 leading-relaxed">
-        Our founders bring over 40 years of combined experience across finance,
-        infrastructure, governance and development — demonstrating that women
-        are not only participants, but pioneers in shaping Africa’s future.
+        We believe that centring women’s experiences in the design of transport, infrastructure,
+        digital and social systems leads to safer, more accessible and more productive economies
+        — for everyone.
       </p>
-
       <div class="separator mt-8"></div>
     </div>
 
     <!-- Image -->
     <div class="zoom-in">
       <div class="rounded-3xl overflow-hidden shadow-lg border border-black/5 dark:border-white/10">
-        <img src="img/womanBoardroom.png"
-             alt="Women Leading in Strategy"
-             class="w-full h-[360px] object-cover">
+        <img src="img/womanBoardroom.png" alt="Women Leading in Strategy" class="w-full h-[360px] object-cover">
       </div>
     </div>
-
   </div>
 </section>
 
-
 <!-- ================= SERVICES ================= -->
 <section id="services" class="py-16 lg:py-24 px-6 lg:px-10 bg-[#f7f3eb] dark:bg-black relative">
-
-  <!-- Left border line -->
   <div class="hidden lg:block absolute left-0 top-0 h-full w-[3px] bg-brand/25"></div>
 
   <div class="max-w-6xl mx-auto">
-
     <!-- Heading -->
     <div class="mb-16 fade-in">
       <h2 class="text-2xl sm:text-3xl font-semibold text-brand mb-4">
@@ -433,43 +394,107 @@
 
     <!-- Service Cards -->
     <div class="grid md:grid-cols-3 gap-10">
-
       <!-- Advisory -->
-      <div class="bg-lightCard dark:bg-deeper border border-black/5 dark:border-white/10 rounded-2xl p-8
-                  shadow-sm hover:-translate-y-1 hover:shadow-lg hover:border-brand transition zoom-in">
+      <div class="bg-lightCard dark:bg-deeper border border-black/5 dark:border-white/10 rounded-2xl p-8 shadow-sm hover:-translate-y-1 hover:shadow-lg hover:border-brand transition zoom-in">
         <h3 class="text-lg font-semibold mb-3">Advisory</h3>
-        <p class="text-xs text-brand uppercase tracking-[0.18em] mb-4">Research-Led Strategy</p>
+        <p class="text-xs text-brand uppercase tracking-[0.18em] mb-4">Research-led strategy &amp; structuring</p>
         <p class="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
-          Providing research-driven, evidence-based advisory across infrastructure,
-          finance and technology sectors. We support clients through strategy,
-          business cases, feasibility studies and investment preparation.
+          Evidence-based advisory across infrastructure, transport, energy, digital
+          and social sectors — from strategy and policy to business cases, feasibility
+          studies and investment preparation.
         </p>
       </div>
 
       <!-- Capital Raising -->
-      <div class="bg-lightCard dark:bg-deeper border border-black/5 dark:border-white/10 rounded-2xl p-8
-                  shadow-sm hover:-translate-y-1 hover:shadow-lg hover:border-brand transition zoom-in md:mt-6">
+      <div class="bg-lightCard dark:bg-deeper border border-black/5 dark:border-white/10 rounded-2xl p-8 shadow-sm hover:-translate-y-1 hover:shadow-lg hover:border-brand transition zoom-in md:mt-6">
         <h3 class="text-lg font-semibold mb-3">Capital Raising</h3>
-        <p class="text-xs text-brand uppercase tracking-[0.18em] mb-4">Equity, Debt & Mezzanine</p>
+        <p class="text-xs text-brand uppercase tracking-[0.18em] mb-4">Equity, debt &amp; blended finance</p>
         <p class="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
-          Enabling access to financing solutions, including equity, debt,
-          mezzanine and blended instruments. We source and structure capital
-          for women-owned businesses, SMEs and high-impact infrastructure projects.
+          Sourcing and structuring fit-for-purpose capital solutions — including equity,
+          debt, mezzanine and blended instruments — with a focus on women-owned businesses,
+          SMEs and high-impact infrastructure projects.
         </p>
       </div>
 
       <!-- Investing -->
-      <div class="bg-lightCard dark:bg-deeper border border-black/5 dark:border-white/10 rounded-2xl p-8
-                  shadow-sm hover:-translate-y-1 hover:shadow-lg hover:border-brand transition zoom-in md:mt-12">
+      <div class="bg-lightCard dark:bg-deeper border border-black/5 dark:border-white/10 rounded-2xl p-8 shadow-sm hover:-translate-y-1 hover:shadow-lg hover:border-brand transition zoom-in md:mt-12">
         <h3 class="text-lg font-semibold mb-3">Investing</h3>
-        <p class="text-xs text-brand uppercase tracking-[0.18em] mb-4">High-Impact Assets</p>
+        <p class="text-xs text-brand uppercase tracking-[0.18em] mb-4">High-impact assets</p>
         <p class="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
-          Investing in commercially sound, high-impact assets that support
-          sustainable development. Our approach protects capital while enabling
-          inclusive growth and long-term value.
+          Investing in commercially sound, high-impact assets that expand access to
+          transport, energy, digital infrastructure, housing and essential services,
+          while protecting capital and building resilience.
         </p>
       </div>
+    </div>
+  </div>
+</section>
 
+<!-- ================= TRAINING & THOUGHT LEADERSHIP ================= -->
+<section class="py-16 lg:py-24 px-6 lg:px-10 bg-lightBg dark:bg-dark relative">
+  <div class="hidden lg:block absolute left-0 top-0 h-full w-[3px] bg-brand/25"></div>
+
+  <div class="max-w-7xl mx-auto grid lg:grid-cols-[1.6fr_1fr] gap-12 items-start">
+    <!-- Text & cards -->
+    <div class="fade-in">
+      <h2 class="text-2xl sm:text-3xl font-semibold text-brand mb-4">
+        Training, Ecosystem &amp; Thought Leadership
+      </h2>
+      <p class="text-sm sm:text-base text-neutral-700 dark:text-neutral-200 leading-relaxed mb-8">
+        Beyond project work, KRATOA contributes to the broader infrastructure and
+        investment ecosystem through specialist training, conference content design
+        and sector-focused thought leadership.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Training -->
+        <div class="bg-lightCard dark:bg-deeper border border-black/5 dark:border-white/10 rounded-2xl p-6 zoom-in">
+          <h3 class="text-sm font-semibold text-brand mb-2">Expert Training Programmes</h3>
+          <ul class="text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 space-y-1">
+            <li>• Gender lens investing for inclusive infrastructure.</li>
+            <li>• Project financing for public infrastructure.</li>
+            <li>• Public-private partnership (PPP) structures.</li>
+          </ul>
+        </div>
+
+        <!-- Ecosystem -->
+        <div class="bg-lightCard dark:bg-deeper border border-black/5 dark:border-white/10 rounded-2xl p-6 zoom-in">
+          <h3 class="text-sm font-semibold text-brand mb-2">Industry Engagement</h3>
+          <p class="text-xs sm:text-sm text-neutral-700 dark:text-neutral-300">
+            Developing conference agendas, shaping content and facilitating dialogues
+            that reflect current infrastructure trends and move stakeholders towards
+            concrete, actionable outcomes.
+          </p>
+        </div>
+
+        <!-- Thought leadership -->
+        <div class="bg-lightCard dark:bg-deeper border border-black/5 dark:border-white/10 rounded-2xl p-6 zoom-in md:col-span-2">
+          <h3 class="text-sm font-semibold text-brand mb-2">Thought Leadership &amp; Podcast</h3>
+          <p class="text-xs sm:text-sm text-neutral-700 dark:text-neutral-300">
+            Articles, commentary and the <em>“Investing in Women-centric Transport”</em>
+            podcast share insights on gender-responsive infrastructure, sustainable
+            financing and inclusive mobility — elevating how infrastructure design
+            and access shape economic opportunity.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SDGs block -->
+    <div class="zoom-in">
+      <div class="bg-lightCard dark:bg-deeper border border-black/5 dark:border-white/10 rounded-3xl p-6 shadow-lg">
+        <h3 class="text-sm font-semibold text-brand mb-3">Aligned with the SDGs</h3>
+        <p class="text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 mb-4">
+          Our work responds to key Sustainable Development Goals, including SDGs
+          4 (Quality Education), 5 (Gender Equality), 8 (Decent Work &amp; Economic Growth),
+          9 (Industry, Innovation &amp; Infrastructure), 10 (Reduced Inequalities)
+          and 11 (Sustainable Cities &amp; Communities).
+        </p>
+        <div class="rounded-2xl overflow-hidden border border-black/5 dark:border-white/10">
+          <!-- Replace with your actual SDG wheel image -->
+          <img src="img/sdg.png" alt="Sustainable Development Goals" class="w-full h-48 object-contain bg-white">
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -487,78 +512,86 @@
       <h2 class="text-2xl sm:text-3xl font-semibold text-brand mb-4">
         Sectors We Work In
       </h2>
-
       <p class="text-sm sm:text-base text-neutral-700 dark:text-neutral-200 max-w-2xl">
         High-impact sectors essential for Africa’s growth, investment and long-term sustainability.
       </p>
-
       <div class="separator mt-8"></div>
     </div>
 
-    <!-- HORIZONTAL SCROLL CONTAINER -->
-    <div class="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
+    <!-- Carousel wrapper -->
+    <div class="relative">
 
-      <!-- 1. Transport -->
-      <div class="min-w-[300px] sm:min-w-[360px] lg:min-w-[400px] snap-start bg-lightCard dark:bg-deeper border border-black/5 dark:border-white/10 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition zoom-in relative group">
-        <img src="img/transport.jpg" class="w-full h-56 object-cover">
-        <div class="p-6">
-          <h3 class="text-lg font-semibold text-brand mb-2">Transport & Logistics</h3>
-          <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-            Public transport, freight systems, rail and mobility solutions development.
-          </p>
+      <!-- Left Arrow -->
+      <button id="sectorPrev"
+              class="hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-black border border-black/10 dark:border-white/20 w-10 h-10 rounded-full items-center justify-center shadow hover:border-brand transition">
+        ‹
+      </button>
+
+      <!-- Right Arrow -->
+      <button id="sectorNext"
+              class="hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-black border border-black/10 dark:border-white/20 w-10 h-10 rounded-full items-center justify-center shadow hover:border-brand transition">
+        ›
+      </button>
+
+      <!-- Scroll container (ONLY cards inside) -->
+      <div id="sectorScroll"
+           class="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide scroll-smooth">
+
+        <!-- 1. Transport -->
+        <div class="min-w-[300px] sm:min-w-[360px] lg:min-w-[400px] snap-start bg-lightCard dark:bg-deeper border border-black/5 dark:border-white/10 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition zoom-in">
+          <img src="img/transport.jpg" class="w-full h-56 object-cover">
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-brand mb-2">Transport &amp; Logistics</h3>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+              Public transport, freight systems, rapid rail and mobility solutions development.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <!-- 2. Energy & Power -->
-      <div class="min-w-[300px] sm:min-w-[360px] lg:min-w-[400px] snap-start bg-lightCard dark:bg-deeper border border-black/5 dark:border-white/10 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition zoom-in relative group">
-        <img src="img/energy.jpg" class="w-full h-56 object-cover">
-        <div class="p-6">
-          <h3 class="text-lg font-semibold text-brand mb-2">Energy & Power</h3>
-          <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-            Power infrastructure, renewable energy programmes and sustainable energy systems.
-          </p>
+        <!-- 2. Energy & Power -->
+        <div class="min-w-[300px] sm:min-w-[360px] lg:min-w-[400px] snap-start bg-lightCard dark:bg-deeper border border-black/5 dark:border-white/10 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition zoom-in">
+          <img src="img/energy.jpg" class="w-full h-56 object-cover">
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-brand mb-2">Energy &amp; Power</h3>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+              Renewable energy programmes, power infrastructure and sustainable energy systems.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <!-- 3. Technology, Media & Communications -->
-      <div class="min-w-[300px] sm:min-w-[360px] lg:min-w-[400px] snap-start bg-lightCard dark:bg-deeper border border-black/5 dark:border-white/10 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition zoom-in relative group">
-        <img src="img/technology.jpg" class="w-full h-56 object-cover">
-        <div class="p-6">
-          <h3 class="text-lg font-semibold text-brand mb-2">Technology, Media & Telecommunications</h3>
-          <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-            Broadband, digital infrastructure, 4IR solutions and innovation ecosystems.
-          </p>
+        <!-- 3. Technology, Media & Telecommunications -->
+        <div class="min-w-[300px] sm:min-w-[360px] lg:min-w-[400px] snap-start bg-lightCard dark:bg-deeper border border-black/5 dark:border-white/10 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition zoom-in">
+          <img src="img/technology.jpg" class="w-full h-56 object-cover">
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-brand mb-2">Technology, Media &amp; Telecommunications</h3>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+              Broadband, digital infrastructure, 4IR solutions and innovation ecosystems.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <!-- 4. Infrastructure -->
-      <div class="min-w-[300px] sm:min-w-[360px] lg:min-w-[400px] snap-start bg-lightCard dark:bg-deeper border border-black/5 dark:border-white/10 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition zoom-in relative group">
-        <img src="img/infrastructure.jpg" class="w-full h-56 object-cover">
-        <div class="p-6">
-          <h3 class="text-lg font-semibold text-brand mb-2">Infrastructure Development</h3>
-          <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-            Student housing, healthcare, municipal infrastructure, agribusiness and national programmes.
-          </p>
+        <!-- 4. Infrastructure -->
+        <div class="min-w-[300px] sm:min-w-[360px] lg:min-w-[400px] snap-start bg-lightCard dark:bg-deeper border border-black/5 dark:border-white/10 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition zoom-in">
+          <img src="img/infrastructure.jpg" class="w-full h-56 object-cover">
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-brand mb-2">Infrastructure Development</h3>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+              Student housing, healthcare, municipal infrastructure, broadband and national programmes.
+            </p>
+          </div>
         </div>
+
       </div>
-
-
     </div>
   </div>
 </section>
 
-
-
 <!-- ================= TEAM ================= -->
 <section id="team" class="py-16 lg:py-24 px-6 lg:px-10 bg-[#f7f3eb] dark:bg-black relative">
-
-  <!-- Left border line -->
   <div class="hidden lg:block absolute left-0 top-0 h-full w-[3px] bg-brand/25"></div>
 
   <div class="max-w-6xl mx-auto">
-
     <div class="flex flex-col lg:flex-row gap-10 items-start mb-16">
-
       <div class="flex-1 fade-in relative">
         <h2 class="text-2xl sm:text-3xl font-semibold text-brand mb-4">Leadership Team</h2>
         <p class="text-sm sm:text-base text-neutral-700 dark:text-neutral-200 max-w-md">
@@ -572,27 +605,24 @@
         <div class="bg-black text-white dark:bg-deeper rounded-2xl p-6 lg:p-7 shadow-lg">
           <p class="text-xs tracking-[0.25em] uppercase text-brand mb-3">Value Proposition</p>
           <p class="text-sm sm:text-base">
-            We operate at the intersection of finance, infrastructure and
-            development – sourcing and structuring capital,
-            and investing in commercially sound, high-impact assets.
+            We operate at the intersection of finance, infrastructure and development –
+            sourcing and structuring capital, and investing in commercially sound,
+            high-impact assets.
           </p>
         </div>
         <div class="hidden md:block absolute -bottom-5 -right-5 w-20 h-20 border border-brand/40 rounded-2xl"></div>
       </div>
-
     </div>
 
     <!-- Team cards -->
     <div class="grid md:grid-cols-3 gap-8">
-
       <article class="bg-lightCard dark:bg-deeper border border-black/5 dark:border-white/10 rounded-2xl p-6 shadow-sm hover:-translate-y-1 hover:shadow-lg hover:border-brand transition zoom-in">
         <h3 class="text-lg font-semibold">Nangamso Matebese</h3>
         <p class="text-xs text-brand uppercase tracking-[0.18em] mt-1 mb-3">Finance &amp; Investments</p>
         <p class="text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
-          16 years’ experience in investment banking, project finance and
-          private equity, including extensive work in transport.
-          Chartered Banker, HBS General Management Programme graduate and
-          experienced non-executive director.
+          16 years’ experience in investment banking, project finance and private equity,
+          including extensive work in transport. Chartered Banker, HBS General Management
+          Programme graduate and experienced non-executive director.
         </p>
       </article>
 
@@ -600,8 +630,8 @@
         <h3 class="text-lg font-semibold">Tsepang Tihoeng</h3>
         <p class="text-xs text-brand uppercase tracking-[0.18em] mt-1 mb-3">Operations &amp; Governance</p>
         <p class="text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
-          Governance and human development specialist with experience in politics
-          and policy implementation, including SDG-focused initiatives and organisational development.
+          Governance and human development specialist with experience in politics and
+          policy implementation, including SDG-focused initiatives and organisational development.
         </p>
       </article>
 
@@ -609,31 +639,24 @@
         <h3 class="text-lg font-semibold">Collective Expertise</h3>
         <p class="text-xs text-brand uppercase tracking-[0.18em] mt-1 mb-3">40+ Years Combined</p>
         <p class="text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
-          Experience spanning renewable energy, public transport, broadband,
-          student housing, rapid rail and other national programmes.
+          Experience spanning renewable energy, public transport, broadband, student housing,
+          rapid rail and other national programmes across the continent.
         </p>
       </article>
-
     </div>
-
   </div>
 </section>
 
-
-
 <!-- ================= CONTACT ================= -->
 <section id="contact" class="py-16 lg:py-24 px-6 lg:px-10 bg-lightBg dark:bg-dark relative">
-
-  <!-- Left border line -->
   <div class="hidden lg:block absolute left-0 top-0 h-full w-[3px] bg-brand/25"></div>
 
   <div class="max-w-4xl mx-auto">
-
     <h2 class="text-2xl sm:text-3xl font-semibold text-brand mb-6 fade-in">Contact Us</h2>
 
     <p class="text-sm sm:text-base text-neutral-700 dark:text-neutral-200 max-w-xl fade-in">
-      We collaborate with investors, businesses, public institutions and
-      ecosystem partners committed to sustainable and commercially sound growth.
+      We collaborate with investors, businesses, public institutions and ecosystem partners
+      committed to sustainable and commercially sound growth.
     </p>
 
     <div class="separator my-10"></div>
@@ -651,16 +674,12 @@
         <p class="text-neutral-700 dark:text-neutral-300">Website: www.kratoa.co.za</p>
       </div>
     </div>
-
   </div>
 </section>
-
-
 
 <!-- ================= FOOTER ================= -->
 <footer class="bg-[#f5efe4] dark:bg-black border-t border-black/10 dark:border-white/10 pt-10 mt-10">
   <div class="max-w-7xl mx-auto px-6 lg:px-10 grid md:grid-cols-3 gap-10">
-
     <!-- Brand -->
     <div>
       <h3 class="text-xs tracking-[0.25em] uppercase font-semibold">KRATOA Consulting</h3>
@@ -674,7 +693,8 @@
       <h4 class="text-xs tracking-[0.25em] uppercase font-semibold mb-3">Explore</h4>
       <ul class="text-sm space-y-2 text-neutral-600 dark:text-neutral-400">
         <li><a href="#about" class="hover:text-brand transition">About</a></li>
-        <li><a href="#services" class="py-2 hover:text-brand transition">Services</a></li>
+        <li><a href="#services" class="hover:text-brand transition">Services</a></li>
+        <li><a href="#sectors" class="hover:text-brand transition">Sectors</a></li>
         <li><a href="#team" class="hover:text-brand transition">Team</a></li>
         <li><a href="#contact" class="hover:text-brand transition">Contact</a></li>
       </ul>
@@ -688,15 +708,12 @@
         +27 83 644 3941
       </p>
     </div>
-
   </div>
 
   <div class="text-center text-xs text-neutral-500 dark:text-neutral-500 mt-10 pt-6 border-t border-black/10 dark:border-white/10">
-    © 2025 KRATOA Consulting — Unlimited Potential
+    © 2025 KRATOA Consulting — Unlimited Potential · Built by Dateh
   </div>
 </footer>
-
-
 
 <!-- ================= COOKIE BANNER ================= -->
 <div
@@ -712,9 +729,17 @@
   </button>
 </div>
 
-
-
 <!-- ================= SCRIPTS ================= -->
+
+<script>
+  const sectorScroll = document.getElementById('sectorScroll');
+  const next = document.getElementById('sectorNext');
+  const prev = document.getElementById('sectorPrev');
+
+  next.onclick = () => sectorScroll.scrollBy({ left: 400, behavior: 'smooth' });
+  prev.onclick = () => sectorScroll.scrollBy({ left: -400, behavior: 'smooth' });
+</script>
+
 <script>
   const html = document.documentElement;
 
@@ -763,7 +788,6 @@
 
   function initScrollAnimations() {
     const revealElements = document.querySelectorAll(".fade-in, .slide-up, .zoom-in");
-
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
@@ -775,14 +799,12 @@
       },
       { threshold: 0.15 }
     );
-
     revealElements.forEach(el => observer.observe(el));
   }
 
   function initCookieBanner() {
     const banner = document.getElementById("cookieBanner");
     const acceptBtn = document.getElementById("cookieAccept");
-
     if (!banner || !acceptBtn) return;
 
     if (!localStorage.getItem("cookieAccepted")) {
@@ -803,7 +825,6 @@
       preloader.classList.add("preloader-hide");
     });
 
-    // Safety timeout in case 'load' is delayed
     setTimeout(() => {
       preloader.classList.add("preloader-hide");
     }, 5000);
@@ -820,3 +841,4 @@
 
 </body>
 </html>
+

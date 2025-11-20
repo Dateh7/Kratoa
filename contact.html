@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Contact KRATOA Consulting — Let’s Work Together</title>
+
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <meta name="description" content="Get in touch with KRATOA Consulting for advisory, investment, capital raising and strategy engagements across Africa’s growth sectors.">
+  <meta name="keywords" content="KRATOA contact, consulting South Africa, advisory firm contact, investment consulting contact, women-led advisory Africa">
+  <meta name="author" content="KRATOA Consulting">
+
+  <!-- OG -->
+  <meta property="og:title" content="Contact KRATOA Consulting — Advisory, Capital & Investment">
+  <meta property="og:description" content="Connect with our leadership team for strategic, impact-driven consulting engagements.">
+  <meta property="og:image" content="img/contact-hero.jpg">
+  <meta property="og:type" content="website">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: "#9fbf73",
+            dark: "#0b0b0b",
+            deeper: "#050505",
+            lightBg: "#f5f0e8",
+            lightCard: "#fdfaf5",
+            lightText: "#2a2721",
+          },
+          fontFamily: { sans: ["Inter", "system-ui", "sans-serif"] },
+        }
+      }
+    }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    .fade-in, .slide-up, .zoom-in { opacity: 0; }
+    .slide-up { transform: translateY(40px); }
+    .zoom-in { transform: scale(0.96); }
+
+    .visible.fade-in { animation: fadeIn 1.2s ease-out forwards; }
+    .visible.slide-up { animation: slideUp 1.2s ease-out forwards; }
+    .visible.zoom-in { animation: zoomIn 1.3s ease-out forwards; }
+
+    @keyframes fadeIn { to { opacity: 1; } }
+    @keyframes slideUp { to { opacity: 1; transform: translateY(0); } }
+    @keyframes zoomIn { to { opacity: 1; transform: scale(1); } }
+
+    .separator {
+      height: 1px; width: 100%; position: relative;
+      background: linear-gradient(90deg, rgba(159,191,115,0.18), rgba(0,0,0,0));
+      overflow: hidden;
+    }
+    .separator::before {
+      content:""; position:absolute; inset:0;
+      background: linear-gradient(90deg, transparent, #9fbf73, transparent);
+      animation: moveLine 2.4s linear infinite;
+    }
+    @keyframes moveLine { 0% {transform:translateX(-50%);} 100% {transform:translateX(50%);} }
+
+    /* Preloader */
+    #preloader {
+      position: fixed; inset:0;
+      display:flex;align-items:center;justify-content:center;
+      background: radial-gradient(circle at top, #f5f0e8, #e4d6c0, #d2c0a5);
+      z-index:9999;
+      transition:opacity .6s, visibility .6s;
+    }
+    #preloader.preloader-hide { opacity:0; visibility:hidden; }
+    .orbit-shell {
+      width:100px;height:100px;border-radius:9999px;
+      background:rgba(253,250,245,.95);
+      border:1px solid rgba(0,0,0,.06);
+      display:flex;align-items:center;justify-content:center;
+      position:relative;
+    }
+    .orbit-center {
+      width:24px;height:24px;border-radius:9999px;
+      border:1px solid rgba(159,191,115,.4);
+      background: radial-gradient(circle, rgba(159,191,115,.15), transparent);
+    }
+    .orbit-logo {
+      width:40px;height:40px;position:absolute;
+      animation:orbitLogo 2.2s linear infinite;
+    }
+    @keyframes orbitLogo {
+      0% { transform: rotate(0deg) translateX(40px) rotate(0deg); }
+      100% { transform: rotate(360deg) translateX(40px) rotate(-360deg); }
+    }
+  </style>
+</head>
+
+<body class="bg-lightBg text-lightText dark:bg-black dark:text-white font-sans">
+
+<!-- LOADER -->
+<div id="preloader">
+  <div class="orbit-shell">
+    <div class="orbit-center"></div>
+    <img src="img/Kratoa-green-circle.png" class="orbit-logo">
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<header class="fixed top-0 left-0 w-full z-50 border-b border-black/5 dark:border-white/10 bg-lightBg/80 dark:bg-black/70 backdrop-blur-md">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 py-4 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-4">
+      <img src="img/Kratoa-green-circle.png" class="w-16 h-16 md:w-20 md:h-20">
+      <div class="flex flex-col leading-tight">
+        <span class="text-base md:text-lg tracking-[0.32em] uppercase font-semibold">KRATOA</span>
+        <span class="text-[0.75rem] tracking-[0.28em] uppercase text-neutral-700 dark:text-neutral-300">Consulting</span>
+      </div>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-10 text-xs tracking-[0.25em] uppercase font-semibold">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="sectors.html">Sectors</a>
+      <a href="team.html">Team</a>
+      <a href="insights.html">Insights</a>
+      <a href="contact.html" class="text-brand">Contact</a>
+    </nav>
+
+    <div class="flex items-center gap-4">
+      <button id="themeToggle" class="w-9 h-9 rounded-full border border-black/10 flex items-center justify-center">☾</button>
+      <button id="menuBtn" class="md:hidden text-2xl">☰</button>
+    </div>
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div id="mobileMenu" class="hidden md:hidden flex-col bg-lightBg/95 dark:bg-black/95 border-t py-4 text-sm uppercase tracking-[0.25em] font-semibold">
+    <a href="about.html" class="py-2">About</a>
+    <a href="services.html" class="py-2">Services</a>
+    <a href="sectors.html" class="py-2">Sectors</a>
+    <a href="team.html" class="py-2">Team</a>
+    <a href="insights.html" class="py-2">Insights</a>
+    <a href="contact.html" class="py-2 text-brand">Contact</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="relative min-h-[55vh] flex items-center px-6 lg:px-10 pt-28 pb-16"
+         style="background-image:url('img/contact-hero.jpg');background-size:cover;background-position:center;">
+  <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/30"></div>
+
+  <div class="relative max-w-6xl mx-auto fade-in">
+    <p class="tracking-[0.28em] text-white/80 uppercase text-sm font-semibold mb-4">Connect With Us</p>
+    <h1 class="text-4xl sm:text-5xl text-white font-semibold leading-tight slide-up">Contact KRATOA Consulting</h1>
+    <p class="mt-6 max-w-xl text-neutral-200 slide-up">
+      Engage our advisory, capital and investment teams for collaborative, strategic and
+      impact-driven work across Africa.
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT DETAILS -->
+<section class="py-16 lg:py-24 px-6 lg:px-10 bg-lightBg dark:bg-dark relative">
+  <div class="hidden lg:block absolute left-0 top-0 bg-brand/30 w-[3px] h-full"></div>
+
+  <div class="max-w-5xl mx-auto fade-in">
+    <h2 class="text-2xl sm:text-3xl font-semibold text-brand mb-6">Get in Touch</h2>
+
+    <p class="text-sm sm:text-base text-neutral-700 dark:text-neutral-200 mb-6">
+      We collaborate with investors, public institutions, private-sector partners,
+      development agencies and impact-focused organisations.
+    </p>
+
+    <div class="grid sm:grid-cols-2 gap-8 mt-8">
+      <div class="bg-lightCard dark:bg-deeper border rounded-2xl p-6 shadow-sm">
+        <h3 class="text-xs uppercase tracking-[0.25em] text-neutral-500 dark:text-neutral-400 mb-2">
+          Primary Contact
+        </h3>
+        <p class="font-medium">KRATOA Consulting</p>
+        <p class="text-sm text-neutral-700 dark:text-neutral-300 mt-2">Phone: +27 83 644 3941</p>
+      </div>
+
+      <div class="bg-lightCard dark:bg-deeper border rounded-2xl p-6 shadow-sm">
+        <h3 class="text-xs uppercase tracking-[0.25em] text-neutral-500 dark:text-neutral-400 mb-2">
+          Email & Web
+        </h3>
+        <p class="text-sm text-neutral-700 dark:text-neutral-300">Email: info@kratoa.co.za</p>
+        <p class="text-sm text-neutral-700 dark:text-neutral-300">Website: www.kratoa.co.za</p>
+      </div>
+    </div>
+
+    <div class="separator mt-12"></div>
+  </div>
+</section>
+
+<!-- FORM (Optional Future Expansion Placeholder) -->
+<section class="py-16 lg:py-24 px-6 lg:px-10 bg-[#f5efe4] dark:bg-black relative">
+  <div class="hidden lg:block absolute left-0 top-0 bg-brand/25 w-[3px] h-full"></div>
+
+  <div class="max-w-4xl mx-auto fade-in text-center">
+    <h2 class="text-2xl sm:text-3xl font-semibold text-brand mb-6">Work With Us</h2>
+    <p class="text-sm sm:text-base text-neutral-700 dark:text-neutral-200 mb-8 max-w-2xl mx-auto">
+      Whether you're exploring a new investment, structuring a project, or designing
+      a programme — we’re ready to collaborate.
+    </p>
+
+    <a href="mailto:info@kratoa.co.za"
+       class="px-6 py-3 bg-brand text-black rounded-full text-xs sm:text-sm tracking-[0.22em] uppercase font-semibold hover:bg-brand/90 transition">
+      Email Us Directly
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#f5efe4] dark:bg-black border-t border-black/10 dark:border-white/10 pt-10 mt-10">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 grid md:grid-cols-3 gap-10">
+    <div>
+      <h3 class="text-xs tracking-[0.25em] uppercase font-semibold">KRATOA Consulting</h3>
+      <p class="text-sm mt-3 text-neutral-600 dark:text-neutral-400">
+        Women-led. Impact-driven. Strategy-focused.
+      </p>
+    </div>
+
+    <div>
+      <h4 class="text-xs tracking-[0.25em] uppercase font-semibold mb-3">Explore</h4>
+      <ul class="text-sm space-y-2 text-neutral-600 dark:text-neutral-400">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="sectors.html">Sectors</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="contact.html" class="text-brand">Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-xs tracking-[0.25em] uppercase font-semibold mb-3">Contact</h4>
+      <p class="text-sm text-neutral-600 dark:text-neutral-400">
+        info@kratoa.co.za<br>
+        +27 83 644 3941
+      </p>
+    </div>
+  </div>
+
+  <div class="text-center text-xs text-neutral-500 dark:text-neutral-500 mt-10 pt-6 border-t border-black/10 dark:border-white/10">
+    © 2025 KRATOA Consulting — Unlimited Potential · Built by Dateh
+  </div>
+</footer>
+
+<script>
+  const html = document.documentElement;
+
+  function applyTheme(t){ t==="dark"?html.classList.add("dark"):html.classList.remove("dark") }
+  function initTheme(){ const s=localStorage.getItem("theme");
+    applyTheme(s? s : (window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"));
+    document.getElementById("themeToggle").addEventListener("click",()=>{
+      const next=html.classList.contains("dark")?"light":"dark";
+      applyTheme(next); localStorage.setItem("theme",next);
+    });
+  }
+
+  function initMenu(){
+    document.getElementById("menuBtn").addEventListener("click",()=>{
+      document.getElementById("mobileMenu").classList.toggle("hidden");
+    });
+  }
+
+  function initReveal(){
+    const els=document.querySelectorAll(".fade-in,.slide-up,.zoom-in");
+    const obs=new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");obs.unobserve(e.target);}});
+    },{threshold:0.15});
+    els.forEach(el=>obs.observe(el));
+  }
+
+  function initPreloader(){
+    const p=document.getElementById("preloader"); if(!p) return;
+    let hidden=false; const hide=()=>{ if(!hidden){ hidden=true; p.classList.add("preloader-hide"); } };
+    window.addEventListener("load", hide);
+    setTimeout(hide,2000);
+  }
+
+  document.addEventListener("DOMContentLoaded",()=>{
+    initTheme();
+    initMenu();
+    initReveal();
+    initPreloader();
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Services — KRATOA Consulting | Advisory • Capital • Investment</title>
+
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <meta name="description" content="Explore KRATOA Consulting’s services across strategy, investment structuring, capital mobilisation, transaction advisory, policy, governance and women-centric infrastructure solutions.">
+  <meta name="keywords" content="KRATOA services, consulting services, capital raising, transaction advisory, investment structuring, programme development, gender-lens investing, women-led advisory Africa">
+  <meta name="author" content="KRATOA Consulting">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="KRATOA Consulting Services — Advisory, Capital, Investment">
+  <meta property="og:description" content="High-impact advisory and investment services across infrastructure, energy, transport, technology and social sectors.">
+  <meta property="og:image" content="img/services-hero.jpg">
+  <meta property="og:url" content="https://kratoa.co.za/services">
+  <meta property="og:type" content="article">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: "#9fbf73",
+            dark: "#0b0b0b",
+            deeper: "#050505",
+            lightBg: "#f5f0e8",
+            lightCard: "#fdfaf5",
+            lightText: "#2a2721"
+          },
+          fontFamily: { sans: ["Inter", "system-ui", "sans-serif"] },
+        },
+      },
+    };
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Shared Animations + Preloader -->
+  <style>
+    .fade-in,.slide-up,.zoom-in { opacity: 0; }
+    .slide-up { transform: translateY(40px); }
+    .zoom-in { transform: scale(0.96); }
+
+    .visible.fade-in { animation: fadeIn 1.15s ease-out forwards; }
+    .visible.slide-up { animation: slideUp 1.2s ease-out forwards; }
+    .visible.zoom-in { animation: zoomIn 1.25s ease-out forwards; }
+
+    @keyframes fadeIn { to { opacity: 1; } }
+    @keyframes slideUp { to { opacity: 1; transform: translateY(0); } }
+    @keyframes zoomIn { to { opacity: 1; transform: scale(1); } }
+
+    .separator {
+      height: 1px;
+      background: linear-gradient(90deg, rgba(159,191,115,0.18), transparent);
+      overflow: hidden;
+      position: relative;
+    }
+    .separator::before {
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(90deg, transparent, #9fbf73, transparent);
+      animation: moveLine 2.3s linear infinite;
+    }
+    @keyframes moveLine {
+      0% { transform: translateX(-50%); }
+      100% { transform: translateX(50%); }
+    }
+
+    /* Preloader */
+    #preloader {
+      position: fixed; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: radial-gradient(circle at top, #f5f0e8, #e3d5be, #d1bfa4);
+      z-index: 9999;
+      transition: opacity .6s, visibility .6s;
+    }
+    #preloader.preloader-hide { opacity: 0; visibility: hidden; }
+
+    .orbit-shell {
+      width:100px; height:100px;
+      border-radius:9999px;
+      display:flex; align-items:center; justify-content:center;
+      background:rgba(253,250,245,0.92);
+      border:1px solid rgba(0,0,0,0.06);
+      position:relative;
+    }
+    .orbit-center {
+      width:24px; height:24px; border-radius:9999px;
+      border:1px solid rgba(159,191,115,0.45);
+      background: radial-gradient(circle, rgba(159,191,115,0.2), transparent);
+    }
+    .orbit-logo {
+      width:40px; height:40px; position:absolute;
+      animation: orbitLogo 2.1s linear infinite;
+    }
+    @keyframes orbitLogo {
+      0% { transform: rotate(0deg) translateX(40px) rotate(0deg); }
+      100% { transform: rotate(360deg) translateX(40px) rotate(-360deg); }
+    }
+  </style>
+</head>
+
+<body class="bg-lightBg text-lightText dark:bg-black dark:text-white font-sans">
+
+<!-- ================= PRELOADER ================= -->
+<div id="preloader">
+  <div class="orbit-shell">
+    <div class="orbit-center"></div>
+    <img src="img/Kratoa-green-circle.png" class="orbit-logo">
+  </div>
+</div>
+
+<!-- ================= NAVBAR ================= -->
+<header class="fixed top-0 left-0 w-full z-50 border-b border-black/5 dark:border-white/10 bg-lightBg/80 dark:bg-black/70 backdrop-blur-md">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 py-4 flex items-center justify-between">
+
+    <a href="index.html" class="flex items-center gap-4">
+      <img src="img/Kratoa-green-circle.png" class="w-16 h-16 md:w-20 md:h-20">
+      <div class="flex flex-col leading-tight">
+        <span class="text-base md:text-lg tracking-[0.32em] uppercase font-semibold">KRATOA</span>
+        <span class="text-[0.75rem] tracking-[0.28em] uppercase text-neutral-700 dark:text-neutral-300">Consulting</span>
+      </div>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-10 text-xs tracking-[0.25em] uppercase font-semibold">
+      <a href="about.html">About</a>
+      <a href="services.html" class="text-brand">Services</a>
+      <a href="sectors.html">Sectors</a>
+      <a href="team.html">Team</a>
+      <a href="insights.html">Insights</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <div class="flex items-center gap-4">
+      <button id="themeToggle"
+              class="w-9 h-9 rounded-full border border-black/10 dark:border-white/20 flex items-center justify-center">
+        ☾
+      </button>
+      <button id="menuBtn" class="md:hidden text-2xl leading-none">☰</button>
+    </div>
+  </div>
+
+  <!-- MOBILE NAV -->
+  <div id="mobileMenu"
+       class="hidden md:hidden flex-col bg-lightBg/95 dark:bg-black/95 border-t py-4 text-sm tracking-[0.25em] uppercase font-semibold">
+    <a href="about.html" class="py-2">About</a>
+    <a href="services.html" class="py-2 text-brand">Services</a>
+    <a href="sectors.html" class="py-2">Sectors</a>
+    <a href="team.html" class="py-2">Team</a>
+    <a href="insights.html" class="py-2">Insights</a>
+    <a href="index.html#contact" class="py-2">Contact</a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="relative min-h-[55vh] flex items-center px-6 lg:px-10 pt-28 pb-16"
+         style="background-image: url('img/services-hero.jpg'); background-size: cover; background-position: center;">
+  <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/30"></div>
+
+  <div class="relative max-w-7xl mx-auto fade-in">
+    <p class="text-sm tracking-[0.28em] uppercase text-white/80 mb-3 font-semibold">
+      Advisory • Capital • Investment
+    </p>
+    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white slide-up">
+      Our Services
+    </h1>
+    <p class="max-w-xl mt-6 text-neutral-200 slide-up">
+      Integrated advisory, investment and capital mobilisation services designed to unlock growth,
+      scale and meaningful social impact across Africa.
+    </p>
+  </div>
+</section>
+
+<!-- ================= INTRO ================= -->
+<section class="py-16 lg:py-24 px-6 lg:px-10 bg-lightBg dark:bg-dark relative">
+  <div class="hidden lg:block absolute left-0 top-0 h-full w-[3px] bg-brand/30"></div>
+
+  <div class="max-w-6xl mx-auto fade-in">
+    <h2 class="text-2xl sm:text-3xl font-semibold text-brand mb-6">What We Do</h2>
+    <p class="text-sm sm:text-base text-neutral-700 dark:text-neutral-200 leading-relaxed">
+      KRATOA Consulting provides end-to-end solutions across strategy, investment design,
+      capital mobilisation and programme delivery — ensuring projects are bankable, inclusive
+      and sustainable.
+    </p>
+    <div class="separator mt-10"></div>
+  </div>
+</section>
+
+<!-- ================= SERVICES GRID ================= -->
+<section class="py-16 lg:py-24 px-6 lg:px-10 bg-[#f5efe4] dark:bg-black relative">
+  <div class="hidden lg:block absolute left-0 top-0 h-full w-[3px] bg-brand/25"></div>
+
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+
+    <div class="bg-lightCard dark:bg-deeper border rounded-2xl p-8 shadow-sm zoom-in">
+      <h3 class="text-lg font-semibold text-brand mb-2">Strategy & Advisory</h3>
+      <p class="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+        Strategic planning, feasibility, business cases, socio-economic research, and policy alignment.
+      </p>
+    </div>
+
+    <div class="bg-lightCard dark:bg-deeper border rounded-2xl p-8 shadow-sm zoom-in">
+      <h3 class="text-lg font-semibold text-brand mb-2">Transaction Advisory</h3>
+      <p class="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+        Structuring, financial modelling, PPP advisory, procurement support and due diligence.
+      </p>
+    </div>
+
+    <div class="bg-lightCard dark:bg-deeper border rounded-2xl p-8 shadow-sm zoom-in">
+      <h3 class="text-lg font-semibold text-brand mb-2">Investment Structuring</h3>
+      <p class="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+        Blended finance models, investment vehicles, gender-lens frameworks and project preparation.
+      </p>
+    </div>
+
+    <div class="bg-lightCard dark:bg-deeper border rounded-2xl p-8 shadow-sm zoom-in">
+      <h3 class="text-lg font-semibold text-brand mb-2">Programme & Project Development</h3>
+      <p class="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+        Infrastructure programme design, regulatory pathways, cost modelling and execution planning.
+      </p>
+    </div>
+
+    <div class="bg-lightCard dark:bg-deeper border rounded-2xl p-8 shadow-sm zoom-in">
+      <h3 class="text-lg font-semibold text-brand mb-2">Capital Mobilisation</h3>
+      <p class="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+        Equity, debt, mezzanine and development capital through DFIs, investors and banks.
+      </p>
+    </div>
+
+    <div class="bg-lightCard dark:bg-deeper border rounded-2xl p-8 shadow-sm zoom-in">
+      <h3 class="text-lg font-semibold text-brand mb-2">Policy, Research & Governance</h3>
+      <p class="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+        Governance frameworks, M&E, institutional reform and policy research for complex programmes.
+      </p>
+    </div>
+
+    <div class="bg-lightCard dark:bg-deeper border rounded-2xl p-8 shadow-sm md:col-span-2 zoom-in">
+      <h3 class="text-lg font-semibold text-brand mb-2">Women-Centric Infrastructure</h3>
+      <p class="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+        Infrastructure solutions that improve mobility, safety, digital access and economic empowerment
+        for women.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= WHY IT MATTERS ================= -->
+<section class="py-16 lg:py-24 px-6 lg:px-10 bg-lightBg dark:bg-dark relative">
+  <div class="hidden lg:block absolute left-0 top-0 h-full w-[3px] bg-brand/25"></div>
+
+  <div class="max-w-5xl mx-auto fade-in">
+    <h2 class="text-2xl sm:text-3xl font-semibold text-brand mb-6">Why Our Services Matter</h2>
+    <p class="text-sm sm:text-base text-neutral-700 dark:text-neutral-200 leading-relaxed">
+      Our approach aligns strategy, finance and implementation — reducing risk, improving capital efficiency,
+      and strengthening developmental outcomes to support long-term, inclusive growth.
+    </p>
+    <div class="separator mt-10"></div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="py-16 lg:py-24 px-6 lg:px-10 bg-[#f7f3eb] dark:bg-black relative">
+  <div class="hidden lg:block absolute left-0 top-0 h-full w-[3px] bg-brand/25"></div>
+
+  <div class="max-w-4xl mx-auto text-center fade-in">
+    <h2 class="text-2xl sm:text-3xl font-semibold text-brand mb-4">
+      Work With KRATOA
+    </h2>
+    <p class="text-sm sm:text-base text-neutral-700 dark:text-neutral-200 mb-8">
+      Partner with us to unlock scalable, inclusive and commercially viable outcomes across Africa.
+    </p>
+
+    <a href="contact.html"
+       class="px-6 py-3 rounded-full bg-brand text-black text-xs sm:text-sm tracking-[0.22em] uppercase font-semibold hover:bg-[#b7cd87] transition">
+      Contact Us
+    </a>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-[#f5efe4] dark:bg-black border-t border-black/10 dark:border-white/10 pt-10 mt-10">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 grid md:grid-cols-3 gap-10">
+
+    <div>
+      <h3 class="text-xs tracking-[0.25em] uppercase font-semibold">KRATOA Consulting</h3>
+      <p class="text-sm mt-3 text-neutral-600 dark:text-neutral-400">
+        Women-led. Impact-driven. Strategy-focused.
+      </p>
+    </div>
+
+    <div>
+      <h4 class="text-xs tracking-[0.25em] uppercase font-semibold mb-3">Explore</h4>
+      <ul class="text-sm space-y-2 text-neutral-600 dark:text-neutral-400">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class = "text-brand">Services</a></li>
+        <li><a href="sectors.html">Sectors</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-xs tracking-[0.25em] uppercase font-semibold mb-3">Contact</h4>
+      <p class="text-sm text-neutral-600 dark:text-neutral-400">
+        info@kratoa.co.za<br>
+        +27 83 644 3941
+      </p>
+    </div>
+  </div>
+
+  <div class="text-center text-xs text-neutral-500 dark:text-neutral-500 mt-10 pt-6 border-t border-black/10 dark:border-white/10">
+    © 2025 KRATOA Consulting — Unlimited Potential · Built by Dateh
+  </div>
+</footer>
+
+
+<!-- ================= JS ================= -->
+<script>
+  const html = document.documentElement;
+
+  function applyTheme(theme) {
+    if (theme === "dark") {
+      html.classList.add("dark");
+      const icon = document.getElementById("themeIcon");
+      if (icon) icon.textContent = "☀︎";
+    } else {
+      html.classList.remove("dark");
+      const icon = document.getElementById("themeIcon");
+      if (icon) icon.textContent = "☾";
+    }
+  }
+
+  function initTheme() {
+    const stored = localStorage.getItem("theme");
+    if (stored) applyTheme(stored);
+    else applyTheme(window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+
+    const toggle = document.getElementById("themeToggle");
+    if (toggle) {
+      toggle.addEventListener("click", () => {
+        const next = html.classList.contains("dark") ? "light" : "dark";
+        applyTheme(next);
+        localStorage.setItem("theme", next);
+      });
+    }
+  }
+
+  function initMenu() {
+    const btn = document.getElementById("menuBtn");
+    const menu = document.getElementById("mobileMenu");
+    if (!btn || !menu) return;
+    btn.addEventListener("click", () => menu.classList.toggle("hidden"));
+  }
+
+  function initReveal() {
+    const els = document.querySelectorAll(".fade-in, .slide-up, .zoom-in");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("visible");
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    els.forEach((el) => observer.observe(el));
+  }
+
+  /* FIXED PRELOADER */
+  function initPreloader() {
+    const preloader = document.getElementById("preloader");
+    if (!preloader) return;
+
+    let hidden = false;
+
+    function hide() {
+      if (!hidden) {
+        hidden = true;
+        preloader.classList.add("preloader-hide");
+      }
+    }
+
+    window.addEventListener("load", hide);
+    setTimeout(hide, 2000);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    initTheme();
+    initMenu();
+    initReveal();
+    initPreloader();
+  });
+</script>
+
+</body>
+</html>

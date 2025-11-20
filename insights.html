@@ -164,64 +164,52 @@
 <header class="fixed top-0 left-0 w-full z-50 border-b border-black/5 dark:border-white/10 bg-lightBg/80 dark:bg-black/70 backdrop-blur-md">
   <div class="max-w-7xl mx-auto px-6 lg:px-10 py-4 flex items-center justify-between">
 
-    <!-- Logo + name -->
-    <div class="flex items-center gap-4">
-      <img src="img/Kratoa-green-circle.png"
-           alt="KRATOA Logo"
-           class="w-16 h-16 md:w-20 md:h-20">
+    <!-- LOGO -->
+    <a href="index.html" class="flex items-center gap-4">
+      <img src="img/Kratoa-green-circle.png" class="w-16 h-16 md:w-20 md:h-20" alt="KRATOA Logo">
       <div class="flex flex-col leading-tight">
-        <span class="text-base md:text-lg tracking-[0.32em] uppercase font-semibold">
-          KRATOA
-        </span>
+        <span class="text-base md:text-lg tracking-[0.32em] uppercase font-semibold">KRATOA</span>
         <span class="text-[0.75rem] tracking-[0.28em] uppercase text-neutral-700 dark:text-neutral-300">
           Consulting
         </span>
       </div>
-    </div>
+    </a>
 
-    <!-- Desktop nav -->
+    <!-- DESKTOP MENU -->
     <nav class="hidden md:flex items-center gap-10 text-xs tracking-[0.25em] uppercase font-semibold">
-      <a href="about.html" class="hover:text-brand transition">About</a>
-      <a href="index.html#services" class="hover:text-brand transition">Services</a>
-      <a href="index.html#sectors" class="hover:text-brand transition">Sectors</a>
-      <a href="index.html#team" class="hover:text-brand transition">Team</a>
-      <a href="insights.html" class="text-brand">Insights</a>
-      <a href="index.html#contact" class="hover:text-brand transition">Contact</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="sectors.html">Sectors</a>
+      <a href="team.html">Team</a>
+      <a href="insights.html">Insights</a>
+      <a href="contact.html">Contact</a>
     </nav>
 
-    <!-- Controls -->
+    <!-- CONTROLS -->
     <div class="flex items-center gap-4">
-      <!-- Theme toggle -->
-      <button
-        id="themeToggle"
-        class="w-9 h-9 rounded-full border border-black/10 dark:border-white/20 flex items-center justify-center text-xs hover:border-brand hover:text-brand transition bg-lightCard/80 dark:bg-deeper"
-        aria-label="Toggle color mode">
-        <span id="themeIcon">☾</span>
+      <button id="themeToggle" class="w-9 h-9 rounded-full border border-black/10 dark:border-white/20 flex items-center justify-center">
+        ☾
       </button>
-
-      <!-- Mobile nav button -->
-      <button id="menuBtn" class="md:hidden text-2xl leading-none" aria-label="Toggle navigation">
-        ☰
-      </button>
+      <button id="menuBtn" class="md:hidden text-2xl leading-none">☰</button>
     </div>
   </div>
 
-  <!-- Mobile menu -->
-  <div id="mobileMenu"
-       class="hidden md:hidden flex-col bg-lightBg/95 dark:bg-black/95 border-t border-black/5 dark:border-white/10 text-center py-4 text-sm tracking-[0.25em] uppercase font-semibold">
-    <a href="about.html" class="py-2 hover:text-brand transition">About</a>
-    <a href="index.html#services" class="py-2 hover:text-brand transition">Services</a>
-    <a href="index.html#sectors" class="py-2 hover:text-brand transition">Sectors</a>
-    <a href="index.html#team" class="py-2 hover:text-brand transition">Team</a>
-    <a href="insights.html" class="py-2 text-brand">Insights</a>
-    <a href="index.html#contact" class="py-2 hover:text-brand transition">Contact</a>
+  <!-- MOBILE MENU -->
+  <div id="mobileMenu" class="hidden md:hidden flex-col bg-lightBg/95 dark:bg-black/95 border-t border-black/10 dark:border-white/10 py-4 text-sm tracking-[0.25em] uppercase font-semibold">
+    <a href="about.html" class="py-2">About</a>
+    <a href="services.html" class="py-2">Services</a>
+    <a href="sectors.html" class="py-2">Sectors</a>
+    <a href="team.html" class="py-2">Team</a>
+    <a href="insights.html" class="py-2">Insights</a>
+    <a href="contact.html" class="py-2">Contact</a>
   </div>
 </header>
+
 
 <!-- ================= HERO (INSIGHTS) ================= -->
 <section
   class="relative min-h-[60vh] flex items-center px-6 lg:px-10 pt-28 pb-16 overflow-hidden"
-  style="background-image: url('img/insights.jpg'); background-size: cover; background-position: center;">
+  style="background-image: url('img/insightshero2.jpg'); background-size: cover; background-position: center;">
   <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/30"></div>
 
   <div class="relative max-w-6xl mx-auto w-full">
@@ -397,9 +385,10 @@
 </main>
 
 <!-- ================= FOOTER ================= -->
+<!-- ================= FOOTER ================= -->
 <footer class="bg-[#f5efe4] dark:bg-black border-t border-black/10 dark:border-white/10 pt-10 mt-10">
   <div class="max-w-7xl mx-auto px-6 lg:px-10 grid md:grid-cols-3 gap-10">
-    <!-- Brand -->
+
     <div>
       <h3 class="text-xs tracking-[0.25em] uppercase font-semibold">KRATOA Consulting</h3>
       <p class="text-sm mt-3 text-neutral-600 dark:text-neutral-400">
@@ -407,24 +396,22 @@
       </p>
     </div>
 
-    <!-- Nav -->
     <div>
       <h4 class="text-xs tracking-[0.25em] uppercase font-semibold mb-3">Explore</h4>
       <ul class="text-sm space-y-2 text-neutral-600 dark:text-neutral-400">
-        <li><a href="about.html" class="hover:text-brand transition">About</a></li>
-        <li><a href="index.html#services" class="hover:text-brand transition">Services</a></li>
-        <li><a href="index.html#sectors" class="hover:text-brand transition">Sectors</a></li>
-        <li><a href="index.html#team" class="hover:text-brand transition">Team</a></li>
-        <li><a href="insights.html" class="hover:text-brand transition">Insights</a></li>
-        <li><a href="index.html#contact" class="hover:text-brand transition">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="sectors.html">Sectors</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="insights.html" class="text-brand hover:text-brand transition" >Insights</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
 
-    <!-- Contact -->
     <div>
       <h4 class="text-xs tracking-[0.25em] uppercase font-semibold mb-3">Contact</h4>
       <p class="text-sm text-neutral-600 dark:text-neutral-400">
-        info@kratoa.co.za<br />
+        info@kratoa.co.za<br>
         +27 83 644 3941
       </p>
     </div>
@@ -434,6 +421,7 @@
     © 2025 KRATOA Consulting — Unlimited Potential · Built by Dateh
   </div>
 </footer>
+
 
 <!-- ================= COOKIE BANNER ================= -->
 <div

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Team — KRATOA Consulting | Leadership</title>
+
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <meta name="description" content="Meet the leadership of KRATOA Consulting — a women-led advisory and investment firm operating across infrastructure, transport, energy, technology and social development.">
+  <meta name="keywords" content="KRATOA leadership, KRATOA team, Nangamso Matebese, women-led consulting, infrastructure advisory South Africa">
+  <meta name="author" content="KRATOA Consulting">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="KRATOA Consulting — Leadership Team">
+  <meta property="og:description" content="Meet the women-led team behind KRATOA Consulting: strategy, investment and infrastructure experts.">
+  <meta property="og:image" content="img/team-hero.jpg">
+  <meta property="og:url" content="https://kratoa.co.za/team">
+  <meta property="og:type" content="article">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: "#9fbf73",
+            dark: "#0b0b0b",
+            deeper: "#050505",
+            lightBg: "#f5f0e8",
+            lightCard: "#fdfaf5",
+            lightText: "#2a2721"
+          },
+          fontFamily: { sans: ["Inter", "system-ui", "sans-serif"] },
+        },
+      },
+    };
+  </script>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Animations + Preloader + Separator Styling (same as all pages) -->
+  <style>
+    .fade-in,.slide-up,.zoom-in{opacity:0}
+    .slide-up{transform:translateY(40px)}
+    .zoom-in{transform:scale(.96)}
+    .visible.fade-in{animation:fadeIn 1.2s forwards ease-out}
+    .visible.slide-up{animation:slideUp 1.2s forwards ease-out}
+    .visible.zoom-in{animation:zoomIn 1.3s forwards ease-out}
+    @keyframes fadeIn{to{opacity:1}}
+    @keyframes slideUp{to{opacity:1;transform:translateY(0)}}
+    @keyframes zoomIn{to{opacity:1;transform:scale(1)}}
+
+    .separator{height:1px;background:linear-gradient(90deg,rgba(159,191,115,.2),transparent);overflow:hidden;position:relative;margin-top:2.5rem}
+    .separator:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,#9fbf73,transparent);animation:moveLine 2s linear infinite}
+    @keyframes moveLine{0%{transform:translateX(-50%)}100%{transform:translateX(50%)}}
+
+    /* Preloader */
+    #preloader{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at top,#f5f0e8,#e3d5be,#d1bfa4);z-index:9999;transition:opacity .6s,visibility .6s}
+    #preloader.preloader-hide{opacity:0;visibility:hidden}
+    .orbit-shell{width:100px;height:100px;border-radius:9999px;background:rgba(253,250,245,.9);border:1px solid rgba(0,0,0,.06);display:flex;align-items:center;justify-content:center;position:relative}
+    .orbit-center{width:25px;height:25px;border-radius:9999px;border:1px solid rgba(159,191,115,.4);background:radial-gradient(circle,rgba(159,191,115,.2),transparent)}
+    .orbit-logo{width:40px;height:40px;position:absolute;animation:orbitLogo 2.2s linear infinite}
+    @keyframes orbitLogo{0%{transform:rotate(0)translateX(40px)rotate(0)}100%{transform:rotate(360deg)translateX(40px)rotate(-360deg)}}
+  </style>
+</head>
+
+<body class="bg-lightBg text-lightText dark:bg-black dark:text-white font-sans">
+
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="orbit-shell">
+    <div class="orbit-center"></div>
+    <img src="img/Kratoa-green-circle.png" class="orbit-logo">
+  </div>
+</div>
+
+<!-- NAVBAR (same as other pages) -->
+<header class="fixed top-0 left-0 w-full z-50 bg-lightBg/80 dark:bg-black/70 backdrop-blur-md border-b border-black/5 dark:border-white/10">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 py-4 flex items-center justify-between">
+
+    <a href="index.html" class="flex items-center gap-4">
+      <img src="img/Kratoa-green-circle.png" class="w-16 h-16 md:w-20 md:h-20">
+      <div class="flex flex-col leading-tight">
+        <span class="text-base md:text-lg tracking-[0.32em] uppercase font-semibold">KRATOA</span>
+        <span class="text-[0.75rem] tracking-[0.28em] uppercase text-neutral-700 dark:text-neutral-300">Consulting</span>
+      </div>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-10 text-xs tracking-[0.25em] uppercase font-semibold">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="sectors.html">Sectors</a>
+      <a href="team.html" class="text-brand">Team</a>
+      <a href="insights.html">Insights</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <div class="flex items-center gap-4">
+      <button id="themeToggle" class="w-9 h-9 rounded-full border border-black/10 dark:border-white/20 flex items-center justify-center">☾</button>
+      <button id="menuBtn" class="md:hidden text-2xl">☰</button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="hidden md:hidden flex-col bg-lightBg/95 dark:bg-black/95 border-t py-4 text-sm tracking-[0.25em] uppercase font-semibold">
+    <a href="about.html" class="py-2">About</a>
+    <a href="services.html" class="py-2">Services</a>
+    <a href="sectors.html" class="py-2">Sectors</a>
+    <a href="team.html" class="py-2 text-brand">Team</a>
+    <a href="insights.html" class="py-2">Insights</a>
+    <a href="index.html#contact" class="py-2">Contact</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="relative min-h-[55vh] flex items-center px-6 lg:px-10 pt-28 pb-16"
+         style="background-image:url('img/team-hero.jpg'); background-size:cover; background-position:center;">
+  <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/30"></div>
+
+  <div class="relative max-w-7xl mx-auto fade-in">
+    <p class="text-sm tracking-[0.28em] uppercase text-white/80 mb-3 font-semibold">Leadership</p>
+    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white slide-up">Our Team</h1>
+    <p class="max-w-xl mt-6 text-neutral-200 slide-up">
+      KRATOA Consulting is led by experienced women shaping infrastructure, finance,
+      technology and social development for meaningful impact across Africa.
+    </p>
+  </div>
+</section>
+
+<!-- TEAM SECTION -->
+<section class="py-16 lg:py-24 px-6 lg:px-10 bg-lightBg dark:bg-dark relative">
+  <div class="hidden lg:block absolute left-0 top-0 h-full w-[3px] bg-brand/25"></div>
+
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
+
+    <!-- Profile Text -->
+    <div class="fade-in">
+      <h2 class="text-2xl sm:text-3xl font-semibold text-brand mb-6">Nangamso Matebese</h2>
+      <h3 class="text-sm uppercase tracking-[0.25em] text-neutral-600 dark:text-neutral-400 mb-4">Founder & Chief Executive</h3>
+
+      <p class="text-sm sm:text-base text-neutral-700 dark:text-neutral-200 leading-relaxed mb-4">
+        Nangamso Matebese is an experienced strategist and investment professional operating
+        across infrastructure, transport, energy and development sectors. Her work integrates
+        policy, finance and implementation to unlock inclusive, scalable and commercially
+        sound solutions across Africa.
+      </p>
+
+      <p class="text-sm sm:text-base text-neutral-700 dark:text-neutral-200 leading-relaxed mb-4">
+        She has contributed to national infrastructure programmes, financing frameworks,
+        blended finance structures, women-focused investment strategies and large-scale
+        mobility and energy projects shaping long-term economic outcomes.
+      </p>
+
+      <p class="text-sm sm:text-base text-neutral-700 dark:text-neutral-200 leading-relaxed">
+        Her leadership is grounded in sustainability, gender inclusion, governance and
+        commercial viability — supporting governments, DFIs, investors and private-sector
+        partners to execute projects with measurable impact.
+      </p>
+
+      <div class="separator"></div>
+    </div>
+
+    <!-- Image -->
+    <div class="zoom-in">
+      <div class="w-full h-[480px] overflow-hidden rounded-3xl">
+        <img src="img/nangamso.png"
+             alt="Nangamso Matebese"
+             class="w-full h-full object-cover object-top pt-6">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-16 lg:py-24 px-6 lg:px-10 bg-[#f7f3eb] dark:bg-black relative">
+  <div class="hidden lg:block absolute left-0 top-0 h-full w-[3px] bg-brand/25"></div>
+
+  <div class="max-w-4xl mx-auto text-center fade-in">
+    <h2 class="text-2xl sm:text-3xl font-semibold text-brand mb-4">Work With Our Team</h2>
+    <p class="text-sm sm:text-base text-neutral-700 dark:text-neutral-200 mb-8">
+      We collaborate with partners committed to unlocking sustainable, inclusive and
+      commercially sound infrastructure and investment outcomes.
+    </p>
+
+    <a href="contact.html"
+       class="px-6 py-3 rounded-full bg-brand text-black text-xs sm:text-sm tracking-[0.22em] uppercase font-semibold hover:bg-[#b7cd87] transition">
+      Contact Us
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER (same as all pages) -->
+<footer class="bg-[#f5efe4] dark:bg-black border-t border-black/10 dark:border-white/10 pt-10 mt-10">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 grid md:grid-cols-3 gap-10">
+    <div>
+      <h3 class="text-xs tracking-[0.25em] uppercase font-semibold">KRATOA Consulting</h3>
+      <p class="text-sm mt-3 text-neutral-600 dark:text-neutral-400">Women-led. Impact-driven. Strategy-focused.</p>
+    </div>
+
+    <div>
+      <h4 class="text-xs tracking-[0.25em] uppercase font-semibold mb-3">Explore</h4>
+      <ul class="text-sm space-y-2 text-neutral-600 dark:text-neutral-400">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="sectors.html">Sectors</a></li>
+        <li><a href="team.html" class="text-brand">Team</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-xs tracking-[0.25em] uppercase font-semibold mb-3">Contact</h4>
+      <p class="text-sm text-neutral-600 dark:text-neutral-400">
+        info@kratoa.co.za<br>
+        +27 83 644 3941
+      </p>
+    </div>
+  </div>
+
+  <div class="text-center text-xs text-neutral-500 dark:text-neutral-500 mt-10 pt-6 border-t border-black/10 dark:border-white/10">
+    © 2025 KRATOA Consulting — Unlimited Potential · Built by Dateh
+  </div>
+</footer>
+
+<!-- JS (theme, menu, animations, preloader) -->
+<script>
+  const html=document.documentElement;
+
+  function applyTheme(t){t==="dark"?(html.classList.add("dark"),document.getElementById("themeIcon")&&(document.getElementById("themeIcon").textContent="☀︎")):(html.classList.remove("dark"),document.getElementById("themeIcon")&&(document.getElementById("themeIcon").textContent="☾"))}
+
+  function initTheme(){
+    const stored=localStorage.getItem("theme");
+    if(stored) applyTheme(stored);
+    else applyTheme(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
+
+    document.getElementById("themeToggle").addEventListener("click",()=>{const next=html.classList.contains("dark")?"light":"dark";applyTheme(next);localStorage.setItem("theme",next)});
+  }
+
+  function initMenu(){
+    document.getElementById("menuBtn").addEventListener("click",()=>document.getElementById("mobileMenu").classList.toggle("hidden"));
+  }
+
+  function initReveal(){
+    const els=document.querySelectorAll(".fade-in,.slide-up,.zoom-in");
+    const obs=new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");obs.unobserve(e.target)}})
+    },{threshold:.15});
+    els.forEach(el=>obs.observe(el));
+  }
+
+  function initPreloader(){
+    const p=document.getElementById("preloader");
+    if(!p) return;
+    let hidden=false;
+    function hide(){if(!hidden){hidden=true;p.classList.add("preloader-hide")}}
+    window.addEventListener("load",hide);
+    setTimeout(hide,2500);
+  }
+
+  document.addEventListener("DOMContentLoaded",()=>{
+    initTheme();
+    initMenu();
+    initReveal();
+    initPreloader();
+  });
+</script>
+
+</body>
+</html>

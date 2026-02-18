@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Services — KRATOA Consulting | Advisory • Capital • Investment</title>
+  <title>Project Finance Training — KRATOA Consulting</title>
 
   <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
-  <meta name="description" content="Explore KRATOA Consulting’s services across strategy, investment structuring, capital mobilisation, transaction advisory, policy, governance and women-centric infrastructure solutions.">
-  <meta name="keywords" content="KRATOA services, consulting services, capital raising, transaction advisory, investment structuring, programme development, gender-lens investing, women-led advisory Africa">
+  <meta name="description" content="Project Finance Training for Infrastructure Development — practical training for public and private sector professionals to structure, finance and deliver bankable infrastructure projects.">
+  <meta name="keywords" content="project finance training, infrastructure development, PPP training, financial modelling training, KRATOA training, South Africa infrastructure finance">
   <meta name="author" content="KRATOA Consulting">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="KRATOA Consulting Services — Advisory, Capital, Investment">
-  <meta property="og:description" content="High-impact advisory and investment services across infrastructure, energy, transport, technology and social sectors.">
+  <meta property="og:title" content="KRATOA Consulting — Project Finance Training">
+  <meta property="og:description" content="Empowering public and private sector professionals to structure, finance and manage large-scale infrastructure initiatives.">
   <meta property="og:image" content="img/services-hero.jpg">
-  <meta property="og:url" content="https://kratoa.co.za/services">
+  <meta property="og:url" content="https://kratoa.co.za/training">
   <meta property="og:type" content="article">
 
   <!-- Tailwind CDN -->
@@ -42,7 +42,6 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Shared Animations + Preloader -->
   <style>
     .fade-in,.slide-up,.zoom-in { opacity: 0; }
     .slide-up { transform: translateY(40px); }
@@ -113,7 +112,7 @@
 <div id="preloader">
   <div class="orbit-shell">
     <div class="orbit-center"></div>
-    <img src="img/Kratoa-green-circle.png" class="orbit-logo">
+    <img src="img/Kratoa-green-circle.png" class="orbit-logo" alt="KRATOA loading">
   </div>
 </div>
 
@@ -122,7 +121,7 @@
   <div class="max-w-7xl mx-auto px-6 lg:px-10 py-4 flex items-center justify-between">
 
     <a href="index.html" class="flex items-center gap-4">
-      <img src="img/Kratoa-green-circle.png" class="w-16 h-16 md:w-20 md:h-20">
+      <img src="img/Kratoa-green-circle.png" class="w-16 h-16 md:w-20 md:h-20" alt="KRATOA logo">
       <div class="flex flex-col leading-tight">
         <span class="text-base md:text-lg tracking-[0.32em] uppercase font-semibold">KRATOA</span>
         <span class="text-[0.75rem] tracking-[0.28em] uppercase text-neutral-700 dark:text-neutral-300">Consulting</span>
@@ -131,7 +130,7 @@
 
     <nav class="hidden md:flex items-center gap-10 text-xs tracking-[0.25em] uppercase font-semibold">
       <a href="about.html">About</a>
-      <a href="services.html" class="text-brand">Services</a>
+      <a href="services.html">Services</a>
       <a href="sectors.html">Sectors</a>
       <a href="team.html">Team</a>
       <a href="insights.html">Insights</a>
@@ -140,10 +139,11 @@
 
     <div class="flex items-center gap-4">
       <button id="themeToggle"
-              class="w-9 h-9 rounded-full border border-black/10 dark:border-white/20 flex items-center justify-center">
-        ☾
+              class="w-9 h-9 rounded-full border border-black/10 dark:border-white/20 flex items-center justify-center"
+              aria-label="Toggle theme">
+        <span id="themeIcon">☾</span>
       </button>
-      <button id="menuBtn" class="md:hidden text-2xl leading-none">☰</button>
+      <button id="menuBtn" class="md:hidden text-2xl leading-none" aria-label="Open menu">☰</button>
     </div>
   </div>
 
@@ -151,7 +151,7 @@
   <div id="mobileMenu"
        class="hidden md:hidden flex-col bg-lightBg/95 dark:bg-black/95 border-t py-4 text-sm tracking-[0.25em] uppercase font-semibold">
     <a href="about.html" class="py-2">About</a>
-    <a href="services.html" class="py-2 text-brand">Services</a>
+    <a href="services.html" class="py-2">Services</a>
     <a href="sectors.html" class="py-2">Sectors</a>
     <a href="team.html" class="py-2">Team</a>
     <a href="insights.html" class="py-2">Insights</a>
@@ -162,18 +162,17 @@
 <!-- ================= HERO ================= -->
 <section class="relative min-h-[55vh] flex items-center px-6 lg:px-10 pt-28 pb-16"
          style="background-image: url('img/services-hero.jpg'); background-size: cover; background-position: center;">
-  <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/30"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/30"></div>
 
   <div class="relative max-w-7xl mx-auto fade-in">
     <p class="text-sm tracking-[0.28em] uppercase text-white/80 mb-3 font-semibold">
-      Advisory • Capital • Investment
+      Training • Capacity Building • Infrastructure Finance
     </p>
     <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white slide-up">
-      Our Services
+      Project Finance Training
     </h1>
-    <p class="max-w-xl mt-6 text-neutral-200 slide-up">
-      Integrated advisory, investment and capital mobilisation services designed to unlock growth,
-      scale and meaningful social impact across Africa.
+    <p class="max-w-2xl mt-6 text-neutral-200 slide-up">
+      Empowering Public and Private Sector Professionals
     </p>
   </div>
 </section>
@@ -183,109 +182,111 @@
   <div class="hidden lg:block absolute left-0 top-0 h-full w-[3px] bg-brand/30"></div>
 
   <div class="max-w-6xl mx-auto fade-in">
-    <h2 class="text-2xl sm:text-3xl font-semibold text-brand mb-6">What We Do</h2>
+    <h2 class="text-2xl sm:text-3xl font-semibold text-brand mb-6">
+      Project Finance Training for Infrastructure Development
+    </h2>
+
     <p class="text-sm sm:text-base text-neutral-700 dark:text-neutral-200 leading-relaxed">
-      KRATOA Consulting provides end-to-end solutions across strategy, investment design,
-      capital mobilisation and programme delivery — ensuring projects are bankable, inclusive
-      and sustainable.
+      Unlock the full potential of your infrastructure projects with our specialised Project Finance training, designed for public and private sector development entities and professionals. Our comprehensive courses equip participants with the knowledge and skills needed to successfully structure, finance, and manage large-scale infrastructure initiatives.
     </p>
+
     <div class="separator mt-10"></div>
   </div>
 </section>
 
-<!-- ================= SERVICES GRID ================= -->
+<!-- ================= WHY CHOOSE ================= -->
 <section class="py-16 lg:py-24 px-6 lg:px-10 bg-[#f5efe4] dark:bg-black relative">
   <div class="hidden lg:block absolute left-0 top-0 h-full w-[3px] bg-brand/25"></div>
 
-  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
-
-    <div class="bg-lightCard dark:bg-deeper border rounded-2xl p-8 shadow-sm zoom-in">
-      <h3 class="text-lg font-semibold text-brand mb-2">Strategy & Advisory</h3>
-      <p class="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
-        Strategic planning, feasibility, business cases, socio-economic research, and policy alignment.
+  <div class="max-w-7xl mx-auto">
+    <div class="mb-10 fade-in">
+      <h2 class="text-2xl sm:text-3xl font-semibold text-brand mb-4">Why Choose Our Training?</h2>
+      <p class="text-sm sm:text-base text-neutral-700 dark:text-neutral-200 max-w-3xl">
+        Practical, adaptable learning designed for real infrastructure outcomes.
       </p>
+      <div class="separator mt-8"></div>
     </div>
 
-    <div class="bg-lightCard dark:bg-deeper border rounded-2xl p-8 shadow-sm zoom-in">
-      <h3 class="text-lg font-semibold text-brand mb-2">Transaction Advisory</h3>
-      <p class="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
-        Structuring, financial modelling, PPP advisory, procurement support and due diligence.
-      </p>
+    <div class="grid md:grid-cols-2 gap-10">
+      <div class="bg-lightCard dark:bg-deeper border border-black/5 dark:border-white/10 rounded-2xl p-8 shadow-sm zoom-in">
+        <h3 class="text-lg font-semibold mb-3">Expert-Led Curriculum</h3>
+        <p class="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+          Learn from seasoned project finance practitioners with real-world experience across diverse infrastructure sectors.
+        </p>
+      </div>
+
+      <div class="bg-lightCard dark:bg-deeper border border-black/5 dark:border-white/10 rounded-2xl p-8 shadow-sm zoom-in">
+        <h3 class="text-lg font-semibold mb-3">Practical Case Studies</h3>
+        <p class="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+          Engage in hands-on learning through relevant case studies, simulations, and group exercises tailored to current market realities.
+        </p>
+      </div>
+
+      <div class="bg-lightCard dark:bg-deeper border border-black/5 dark:border-white/10 rounded-2xl p-8 shadow-sm zoom-in">
+        <h3 class="text-lg font-semibold mb-3">Customised Modules</h3>
+        <p class="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+          Training content is adaptable to the unique needs of government agencies, private developers, and financial institutions.
+        </p>
+      </div>
+
+      <div class="bg-lightCard dark:bg-deeper border border-black/5 dark:border-white/10 rounded-2xl p-8 shadow-sm zoom-in">
+        <h3 class="text-lg font-semibold mb-3">Latest Industry Insights</h3>
+        <p class="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+          Stay up-to-date with evolving trends, regulatory frameworks, and risk management strategies.
+        </p>
+      </div>
     </div>
-
-    <div class="bg-lightCard dark:bg-deeper border rounded-2xl p-8 shadow-sm zoom-in">
-      <h3 class="text-lg font-semibold text-brand mb-2">Investment Structuring</h3>
-      <p class="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
-        Blended finance models, investment vehicles, gender-lens frameworks and project preparation.
-      </p>
-    </div>
-
-    <div class="bg-lightCard dark:bg-deeper border rounded-2xl p-8 shadow-sm zoom-in">
-      <h3 class="text-lg font-semibold text-brand mb-2">Programme & Project Development</h3>
-      <p class="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
-        Infrastructure programme design, regulatory pathways, cost modelling and execution planning.
-      </p>
-    </div>
-
-    <div class="bg-lightCard dark:bg-deeper border rounded-2xl p-8 shadow-sm zoom-in">
-      <h3 class="text-lg font-semibold text-brand mb-2">Capital Mobilisation</h3>
-      <p class="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
-        Equity, debt, mezzanine and development capital through DFIs, investors and banks.
-      </p>
-    </div>
-
-    <div class="bg-lightCard dark:bg-deeper border rounded-2xl p-8 shadow-sm zoom-in">
-      <h3 class="text-lg font-semibold text-brand mb-2">Policy, Research & Governance</h3>
-      <p class="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
-        Governance frameworks, M&E, institutional reform and policy research for complex programmes.
-      </p>
-    </div>
-
-    <div class="bg-lightCard dark:bg-deeper border rounded-2xl p-8 shadow-sm md:col-span-2 zoom-in">
-      <h3 class="text-lg font-semibold text-brand mb-2">Women-Centric Infrastructure</h3>
-      <p class="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
-        Infrastructure solutions that improve mobility, safety, digital access and economic empowerment
-        for women.
-      </p>
-    </div>
-
-    <!-- Project Finance Training -->
-    <div class="bg-lightCard dark:bg-deeper border rounded-2xl p-8 shadow-sm md:col-span-2 zoom-in">
-      <h3 class="text-lg font-semibold text-brand mb-2">Project Finance Training</h3>
-
-      <p class="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4">
-        Practical, delivery-focused training programmes designed to strengthen
-        project preparation, financial structuring and capital mobilisation capacity
-        across public and private sector institutions.
-      </p>
-
-      <p class="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed mb-6">
-        Our training bridges theory and execution — equipping professionals with the
-        tools required to structure bankable infrastructure projects across transport,
-        energy, digital and social sectors.
-      </p>
-
-      <a href="training.html"
-         class="inline-block px-5 py-3 bg-brand text-black rounded-full text-[0.7rem] sm:text-xs tracking-[0.28em] uppercase font-semibold hover:bg-brand/90 transition">
-        Learn More →
-      </a>
-    </div>
-
-
   </div>
 </section>
 
-<!-- ================= WHY IT MATTERS ================= -->
+<!-- ================= WHO SHOULD ATTEND + HIGHLIGHTS ================= -->
 <section class="py-16 lg:py-24 px-6 lg:px-10 bg-lightBg dark:bg-dark relative">
   <div class="hidden lg:block absolute left-0 top-0 h-full w-[3px] bg-brand/25"></div>
 
-  <div class="max-w-5xl mx-auto fade-in">
-    <h2 class="text-2xl sm:text-3xl font-semibold text-brand mb-6">Why Our Services Matter</h2>
-    <p class="text-sm sm:text-base text-neutral-700 dark:text-neutral-200 leading-relaxed">
-      Our approach aligns strategy, finance and implementation — reducing risk, improving capital efficiency,
-      and strengthening developmental outcomes to support long-term, inclusive growth.
-    </p>
-    <div class="separator mt-10"></div>
+  <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-start">
+    <!-- Who should attend -->
+    <div class="fade-in">
+      <h2 class="text-2xl sm:text-3xl font-semibold text-brand mb-6">Who Should Attend?</h2>
+      <p class="text-sm sm:text-base text-neutral-700 dark:text-neutral-200 leading-relaxed mb-6">
+        Our Project Finance training is ideal for professionals involved in infrastructure development, including:
+      </p>
+
+      <ul class="space-y-3 text-sm sm:text-base text-neutral-700 dark:text-neutral-200">
+        <li class="flex gap-3"><span class="text-brand font-semibold">•</span> Government officials and policy makers</li>
+        <li class="flex gap-3"><span class="text-brand font-semibold">•</span> Private sector developers and investors</li>
+        <li class="flex gap-3"><span class="text-brand font-semibold">•</span> Bankers and financiers</li>
+        <li class="flex gap-3"><span class="text-brand font-semibold">•</span> Project managers and engineers</li>
+        <li class="flex gap-3"><span class="text-brand font-semibold">•</span> Legal and advisory professionals</li>
+      </ul>
+
+      <div class="separator mt-10"></div>
+    </div>
+
+    <!-- Course highlights -->
+    <div class="zoom-in">
+      <h2 class="text-2xl sm:text-3xl font-semibold text-brand mb-6">Course Highlights</h2>
+
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div class="bg-lightCard dark:bg-deeper border border-black/5 dark:border-white/10 rounded-2xl p-6">
+          <p class="text-sm font-semibold">Project Finance principles &amp; models</p>
+        </div>
+        <div class="bg-lightCard dark:bg-deeper border border-black/5 dark:border-white/10 rounded-2xl p-6">
+          <p class="text-sm font-semibold">Risk assessment &amp; mitigation</p>
+        </div>
+        <div class="bg-lightCard dark:bg-deeper border border-black/5 dark:border-white/10 rounded-2xl p-6">
+          <p class="text-sm font-semibold">Structuring PPPs</p>
+        </div>
+        <div class="bg-lightCard dark:bg-deeper border border-black/5 dark:border-white/10 rounded-2xl p-6">
+          <p class="text-sm font-semibold">Financial modelling &amp; analysis</p>
+        </div>
+        <div class="bg-lightCard dark:bg-deeper border border-black/5 dark:border-white/10 rounded-2xl p-6">
+          <p class="text-sm font-semibold">Legal &amp; regulatory considerations</p>
+        </div>
+        <div class="bg-lightCard dark:bg-deeper border border-black/5 dark:border-white/10 rounded-2xl p-6">
+          <p class="text-sm font-semibold">Stakeholder engagement &amp; negotiation</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -293,12 +294,13 @@
 <section class="py-16 lg:py-24 px-6 lg:px-10 bg-[#f7f3eb] dark:bg-black relative">
   <div class="hidden lg:block absolute left-0 top-0 h-full w-[3px] bg-brand/25"></div>
 
-  <div class="max-w-4xl mx-auto text-center fade-in">
-    <h2 class="text-2xl sm:text-3xl font-semibold text-brand mb-4">
-      Work With KRATOA
-    </h2>
-    <p class="text-sm sm:text-base text-neutral-700 dark:text-neutral-200 mb-8">
-      Partner with us to unlock scalable, inclusive and commercially viable outcomes across Africa.
+  <div class="max-w-5xl mx-auto text-center fade-in">
+    <h2 class="text-2xl sm:text-3xl font-semibold text-brand mb-4">Get Started</h2>
+    <p class="text-sm sm:text-base text-neutral-700 dark:text-neutral-200 mb-8 leading-relaxed">
+      Invest in your professional growth and drive successful infrastructure outcomes.
+      Contact us today to learn more about our Project Finance training programmes.
+      <br class="hidden sm:block">
+      Ready to build the future? Empower your team with the skills to lead impactful infrastructure projects.
     </p>
 
     <a href="contact.html"
@@ -323,7 +325,7 @@
       <h4 class="text-xs tracking-[0.25em] uppercase font-semibold mb-3">Explore</h4>
       <ul class="text-sm space-y-2 text-neutral-600 dark:text-neutral-400">
         <li><a href="about.html">About</a></li>
-        <li><a href="services.html" class = "text-brand">Services</a></li>
+        <li><a href="services.html">Services</a></li>
         <li><a href="sectors.html">Sectors</a></li>
         <li><a href="team.html">Team</a></li>
         <li><a href="insights.html">Insights</a></li>
@@ -345,19 +347,17 @@
   </div>
 </footer>
 
-
 <!-- ================= JS ================= -->
 <script>
   const html = document.documentElement;
 
   function applyTheme(theme) {
+    const icon = document.getElementById("themeIcon");
     if (theme === "dark") {
       html.classList.add("dark");
-      const icon = document.getElementById("themeIcon");
       if (icon) icon.textContent = "☀︎";
     } else {
       html.classList.remove("dark");
-      const icon = document.getElementById("themeIcon");
       if (icon) icon.textContent = "☾";
     }
   }
@@ -398,13 +398,11 @@
     els.forEach((el) => observer.observe(el));
   }
 
-  /* FIXED PRELOADER */
   function initPreloader() {
     const preloader = document.getElementById("preloader");
     if (!preloader) return;
 
     let hidden = false;
-
     function hide() {
       if (!hidden) {
         hidden = true;

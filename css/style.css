@@ -1,0 +1,559 @@
+/* ------------------------------------------------------------------
+   GOOGLE FONTS
+------------------------------------------------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+
+/* ------------------------------------------------------------------
+   THEME VARIABLES (DARK MODE DEFAULT)
+------------------------------------------------------------------ */
+:root {
+  --bg: #050607;
+  --bg-alt: #0c0d0f;
+  --surface: rgba(18, 20, 23, 0.85);
+  --surface-soft: rgba(24, 26, 30, 0.7);
+  --fg: #f5f5f7;
+  --muted: #a4a6b0;
+
+  --accent: #8EBB6F;
+  --accent-soft: rgba(142, 187, 111, 0.12);
+
+  --border-subtle: rgba(255, 255, 255, 0.09);
+  --shadow-soft: 0 18px 55px rgba(0, 0, 0, 0.55);
+
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+
+/* ------------------------------------------------------------------
+   LIGHT MODE — CLEAN APPLE WHITE BACKGROUND
+------------------------------------------------------------------ */
+:root[data-theme="light"] {
+  --bg: #F5F5F7;       /* Apple light grey */
+  --bg-alt: #FFFFFF;   /* pure white */
+
+  --surface: rgba(255, 255, 255, 0.65);
+  --surface-soft: rgba(255, 255, 255, 0.55);
+
+  --fg: #1C1C1E;       /* Apple dark charcoal */
+  --muted: #5A5A62;
+
+  --border-subtle: rgba(0, 0, 0, 0.06);
+  --shadow-soft: 0 22px 60px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ------------------------------------------------------------------
+   GLOBAL RESET
+------------------------------------------------------------------ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.75;
+  overflow-x: hidden;
+  letter-spacing: 0.01em;
+}
+
+
+/* ------------------------------------------------------------------
+   TYPOGRAPHY SCALE (APPLE STYLE)
+------------------------------------------------------------------ */
+h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.7rem, 5vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.08;
+  margin-bottom: 1.2rem;
+}
+
+h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 4vw, 3rem);   /* B: Oversized Apple titles */
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+h3 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+p,
+.section-lead {
+  font-size: 1.07rem;
+  max-width: 720px;
+  line-height: 1.78;
+  color: var(--muted);
+}
+
+.section-lead {
+  margin-bottom: 2.3rem;
+}
+
+
+/* ------------------------------------------------------------------
+   CONTAINERS & SECTIONS
+------------------------------------------------------------------ */
+.container {
+  width: min(1120px, 100% - 2.5rem);
+  margin-inline: auto;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.section-alt {
+  padding: 5rem 0;
+}
+
+.section-header {
+  margin-bottom: 3rem;
+}
+
+
+/* ------------------------------------------------------------------
+   GRID SYSTEM
+------------------------------------------------------------------ */
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+
+/* ------------------------------------------------------------------
+   NAVIGATION (GLASS APPLE NAV)
+------------------------------------------------------------------ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  padding: 0.7rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.glass-nav {
+  background: var(--surface);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-decoration: none;
+}
+
+.nav-logo {
+  width: 36px;
+  height: 36px;
+}
+
+.nav-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg);
+}
+
+
+/* NAV LINKS */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  padding-bottom: 0.25rem;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: var(--accent);
+  transition: width 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: var(--fg);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+
+/* ------------------------------------------------------------------
+   THEME TOGGLE
+------------------------------------------------------------------ */
+.theme-toggle {
+  margin-left: 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle);
+  padding: 0.22rem 0.65rem;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+}
+
+.theme-icon {
+  width: 18px;
+  height: 18px;
+  opacity: 0.45;
+  transition: opacity 0.2s ease;
+}
+
+:root[data-theme="light"] .theme-icon-light,
+:root[data-theme="dark"] .theme-icon-dark {
+  opacity: 1;
+}
+
+
+/* ------------------------------------------------------------------
+   HERO
+------------------------------------------------------------------ */
+.hero {
+  padding: 5rem 0 3rem;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.hero-copy p {
+  font-size: 1.15rem;
+  line-height: 1.75;
+  color: var(--muted);
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.6rem;
+}
+
+/* Orbit lines */
+.hero-orbit {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.12);
+  pointer-events: none;
+}
+
+.hero-orbit-1 {
+  width: 320px;
+  height: 320px;
+  animation: orbit 18s linear infinite;
+}
+
+.hero-orbit-2 {
+  width: 420px;
+  height: 420px;
+  animation: orbit 26s linear infinite reverse;
+}
+
+
+/* ------------------------------------------------------------------
+   BUTTONS
+------------------------------------------------------------------ */
+.btn {
+  padding: 0.95rem 2rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), #7da85f);
+  color: #0e1409;
+  box-shadow: 0 10px 25px rgba(142, 187, 111, 0.45);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 35px rgba(142, 187, 111, 0.55);
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  color: var(--fg);
+}
+
+.btn-ghost:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+
+
+/* ------------------------------------------------------------------
+   GLASS SURFACES
+------------------------------------------------------------------ */
+.glass-strong {
+  background: var(--surface);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+  border-radius: 1.3rem;
+}
+
+.glass-soft {
+  background: var(--surface-soft);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 1.3rem;
+  border: 1px solid var(--border-subtle);
+}
+
+
+/* ------------------------------------------------------------------
+   INFO BLOCKS
+------------------------------------------------------------------ */
+.info-block {
+  padding: 1.8rem 1.7rem;
+}
+
+
+/* ------------------------------------------------------------------
+   CARDS (APPLE HOVER LIFT — A)
+------------------------------------------------------------------ */
+.card {
+  padding: 2rem 1.8rem;
+  border-radius: 1.3rem;
+  background: var(--surface);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.28s ease;
+}
+
+/* A: Apple card hover lift */
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 28px 48px rgba(0,0,0,0.20);
+}
+
+
+/* ------------------------------------------------------------------
+   BULLET LIST (APPLE)
+------------------------------------------------------------------ */
+.bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bullet-list li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.05rem;
+  color: var(--muted);
+}
+
+.bullet-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62rem;
+  width: 7px;
+  height: 7px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+
+/* ------------------------------------------------------------------
+   TEAM
+------------------------------------------------------------------ */
+.team-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+
+/* ------------------------------------------------------------------
+   CONTACT
+------------------------------------------------------------------ */
+.contact-grid {
+  padding: 2rem;
+  border-radius: 1.3rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.contact-grid a {
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.contact-grid a:hover {
+  text-decoration: underline;
+}
+
+
+/* ------------------------------------------------------------------
+   FOOTER
+------------------------------------------------------------------ */
+.site-footer {
+  border-top: 1px solid var(--border-subtle);
+  padding: 2rem 0;
+  margin-top: 2rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+
+/* ------------------------------------------------------------------
+   SCROLL ANIMATIONS
+------------------------------------------------------------------ */
+.fade-up,
+.fade-left,
+.fade-right,
+.fade-down,
+.scale-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.fade-left {
+  transform: translateX(-28px);
+}
+
+.fade-right {
+  transform: translateX(28px);
+}
+
+.fade-down {
+  transform: translateY(-22px);
+}
+
+.scale-in {
+  transform: scale(0.94);
+}
+
+.fade-up.show,
+.fade-left.show,
+.fade-right.show,
+.fade-down.show,
+.scale-in.show {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+
+/* ------------------------------------------------------------------
+   ORBIT ANIMATION
+------------------------------------------------------------------ */
+@keyframes orbit {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+
+/* ------------------------------------------------------------------
+   RESPONSIVE
+------------------------------------------------------------------ */
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-visual {
+    order: -1;
+  }
+}
+
+@media (max-width: 800px) {
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0; right: 0;
+    background: var(--surface);
+    backdrop-filter: blur(18px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 0;
+    gap: 1.4rem;
+    transform: translateY(-140%);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease-out;
+  }
+
+  .nav-links.nav-open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
